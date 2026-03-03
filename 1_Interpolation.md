@@ -1,5 +1,7 @@
 # INTERPOLATION
 
+> Showing a TypeScript variable value inside HTML 
+
 ![alt text](image.png)
 
 ```ts
@@ -15,12 +17,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  name="Ayush Poddar"
+  name="Ayush Poddar" //variable to be shown in .html file
 }
 ```
 ```ts
 // app.html
 
-<H1>INTERPOLATION</H1>
 {{name}}
 ```
+
+---
