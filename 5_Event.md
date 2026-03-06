@@ -4,12 +4,14 @@
 <!-- app.html -->
 <h1>Events Tutorial</h1>
 
-<button class="btn" name="btname" (click)="handleEvent($event)">Click Event</button>
+<button class="btn" name="btname" (click)="handleEvent($event)"> Click Event </button>
 ```
 ```ts
 // app.ts
-export class App {
-  handleEvent(event:any){
+export class App 
+{
+  handleEvent(event:any) //any as datatype
+  {
     console.log("Function Called: ", event);
     console.log("Class Name: ", event.target.className);
     console.log("Name: ", event.target.name);
@@ -24,7 +26,7 @@ export class App {
 ### Mouse Event -
 ```ts
 export class App {
-  handleEvent(event:MouseEvent){
+  handleEvent(event:MouseEvent){ //MouseEvent as Datatype
     console.log("Function Called: ", event);
     console.log("Event Type: ", event.type);
     console.log("Event Target: ", event.target);
@@ -52,11 +54,11 @@ style="background-color: rgb(19, 0, 128); width: 100px; height: 100px;">
 
 ```html
 <input type="text"
-(input)="handleEvent($event)"
->
+(input)="handleEvent($event)">
 ```
 ```ts
-export class App {
+export class App 
+{
   handleEvent(event:Event){
     console.log("Function Called: ", event);
     console.log("Class Name: ", (event.target as HTMLInputElement).value);

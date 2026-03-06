@@ -3,11 +3,9 @@
 ### ANGULAR ?   
 Released in 2010 by Google  
 Created by Misko Hevery and Adam Abrons  
-Originally called AngularJS (version 1.x)  
-JS Framework
-Based on MVC Architecture.  
+Originally called AngularJS(Depreciated), currently we use Angular  
+A JS Framework, Based on MVC Architecture.  
 
-Angular Js(Depreciated), currently we use Angular
 
 ---
 INSTALLATION ?

@@ -49,4 +49,3 @@ Exmple:-
     export class ProfileComponent{    
     }
     ```
-4. 
