@@ -8,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: []
 })
+
 export class App {
   handleClickEvent(){
     alert("Hey Babe");
