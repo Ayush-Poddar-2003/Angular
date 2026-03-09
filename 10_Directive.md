@@ -78,3 +78,24 @@ export class App {
 ```
 
 ![alt text](image-17.png)![alt text](image-18.png)
+
+---
+### ngSwitch
+A Structural Directive
+
+```html
+<h1>ngSwitch</h1>
+
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="background-color: red;">Red</h1>
+    <h1 *ngSwitchCase="'blue'" style="background-color: rgb(4, 0, 255);">Blue</h1>
+    <h1 *ngSwitchCase="'green'" style="background-color: rgb(51, 255, 0);">Green</h1>
+    <h1 *ngSwitchCase="'yellow'" style="background-color: rgb(251, 255, 0);">Yellow</h1>
+</div>
+```
+```ts
+export class App {
+  color = "yellow"
+}
+```
+![alt text](image-19.png)
