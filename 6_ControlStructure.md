@@ -1,5 +1,1 @@
-
-
-
-
 ### Contextual Variables

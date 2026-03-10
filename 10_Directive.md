@@ -1,13 +1,14 @@
 # Directive
 
-A Class that adds additional behavior to elements in your applications.  
-
+A Class that adds additional behavior to elements in your applications.    
 A feature that gives more power to DOM Elements.
 
-TYPES -  
-1. Component 
-2. Structural
-3. Attribute 
+| Type                 | Purpose                     | Example              |
+| -------------------- | --------------------------- | -------------------- |
+| Component Directive  | Directive with template     | `@Component`         |
+| Structural Directive | Changes DOM structure       | `*ngIf`, `*ngFor`    |
+| Attribute Directive  | Changes appearance/behavior | `ngClass`, `ngStyle` |
+
 
 ---
 ### *ngFor
@@ -77,7 +78,7 @@ export class App {
 </ng-template>
 ```
 
-![alt text](image-17.png)![alt text](image-18.png)
+![alt text](image-17.png) ![alt text](image-18.png)
 
 ---
 ### ngSwitch

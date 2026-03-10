@@ -19,21 +19,21 @@
 `imports: [RouterOutlet, RouterLink],`
 
 4. Go to `app.html`
-```html
-<ul>
-    <li>
-        <a routerLink="/login">Login</a>
-    </li>
-    <li>
-        <a routerLink="/about">About</a>
-    </li>
-    <li>
-        <a routerLink="/contact">Contact</a>
-    </li>
-</ul>
+    ```html
+    <ul>
+        <li>
+            <a routerLink="/login">Login</a>
+        </li>
+        <li>
+            <a routerLink="/about">About</a>
+        </li>
+        <li>
+            <a routerLink="/contact">Contact</a>
+        </li>
+    </ul>
 
-<router-outlet/>
-```
+    <router-outlet/>
+    ```
 ![alt text](image-20.png)
 
 ---
@@ -51,7 +51,7 @@ export const routes: Routes = [
 ```
 ---
 
-### Passing Data
+### To Do Lecture 36 3
 
 #### 1. 
 

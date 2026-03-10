@@ -3,20 +3,17 @@
 A wrapper around a value.  
 Gives signal when value changes.
 
-```
-count = 10;
-count = signal(10)
-```
 
-To display .ts signal variable in .html we need ()
 
 ```ts
+// app.ts
 export class App {
   x = 10; //normally
   x2 = signal(50) //using signal
 }
 ```
 ```html
+<!-- app.html -->
 {{x}}  
 {{x2()}} <!--Using ( )-->
 ```

@@ -1,30 +1,22 @@
 # Effect
-Function mostly used inside constructor  
-When any signal gets updated, we get a notification in effect
+effect() tracks signals used inside it and re-executes when any of those signals change.
 
 
 ```ts
+// App.ts
 export class App {
-  userName = signal("Ayush")
+  count = signal(1);
 
-  constructor(){ //to run effect
+  constructor(){
     effect( ()=>{
-      console.log(this.userName());
+      console.log("Count Changed ",this.count());
     })
+
+    this.count.set(2);
+    this.count.set(3);
+    this.count.set(4);
   }
 }
 ```
 
-```html
-<h1>{{userName()}}</h1>
-
-<button (click)="userName.set('Aditi')" >Click</button>
-```
-
-
-![alt text](image-15.png)
-
-As soon as button is clicked userName is set to Aditi from Ayush
-
----
 

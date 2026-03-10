@@ -1,5 +1,7 @@
 # Events
 
+Event binding is used to send data from HTML to the component when an event happens.
+
 ```html
 <!-- app.html -->
 <h1>Events Tutorial</h1>
