@@ -3,7 +3,7 @@
 ### ANGULAR ?   
 Released in 2010 by Google  
 Created by Misko Hevery and Adam Abrons  
-Originally called AngularJS(Depreciated), currently we use Angular  
+Originally called AngularJS(Depreciated), currently we use Angular.  
 A JS Framework, Based on MVC Architecture.  
 
 
@@ -13,8 +13,7 @@ INSTALLATION ?
 Go to https://angular.dev/installation  
 
 Install Angular CLI (@angular/cli) once using  
-`npm install -g @angular/cli`   
--g means global
+`npm install -g @angular/cli`  -g means global
 
 Verify using 
 `ng version`
@@ -26,9 +25,31 @@ Go to that folder
 `cd <ProjectName>`  
 `ng serve`  To run server  
 It will run on 
- http://localhost:4200/
+ http://localhost:4200/  
+
+TO SEE ALL ng commands `ng help`  
 
 ---
+## ANGULAR CLI
+> Command Line Interface for Angular.
+
+Tool that helps developers  
+Create, build, test, and deploy angular applications.  
+
+---
+**WHY WE NEED IT ?**  
+Angular projects have:
+- Strict structure
+- Multiple config files
+- TypeScript setup
+- Build configuration
+- CLI automates all that.
+
+Without CLI → setup would take 1–2 hours manually.  
+With CLI → 1 command.
+
+---
+
 ### REACT Vs ANGULAR  
     npm create vite@latest → ng new  
     npm run dev            → ng serve  
@@ -58,36 +79,4 @@ Root Level :-
 - tsconfig.app.json : TypeScript config specifically for app files.
 - tsconfig.json : TypeScript configuration. 
 - tsconfig.spec.json : TypeScript config for test files.             
-
----
- # ANGULAR CLI {Command Line Interface}
- > Command Line Interface for Angular.
-
- Tool that helps developers  
- Create, build, test, and deploy angular applications.  
-
----
-### WHY WE NEED IT ?
-Angular projects have:
-- Strict structure
-- Multiple config files
-- TypeScript setup
-- Build configuration
-- CLI automates all that.
-
-Without CLI → setup would take 1–2 hours manually.  
-With CLI → 1 command.
-
----
-TO INSTALL  
-`npm install -g @angular/cli` once globally
-
-TO CHECK IF INSTALLED  
-`ng version`
-
-CREATING A NEW APPLICATION EVERYTIME  
-`ng new <AppName>`
-
-TO SEE ALL ng commands  
-`ng help`  
 

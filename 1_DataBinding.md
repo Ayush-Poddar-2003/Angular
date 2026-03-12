@@ -1,6 +1,16 @@
-# INTERPOLATION
+# DATA BINDING
+- **One way (.ts -> .html)** :  
+Interpolation, Property Binding, Event Binding
+- **Two way (.ts <-> .html)** :  
+ngModels
 
-> Showing a TypeScript variable value inside HTML 
+
+
+### INTERPOLATION
+
+> Showing a TypeScript variable value inside HTML  
+
+One-way only: data → view.
 
 ![alt text](image.png)
 
