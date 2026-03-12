@@ -40,8 +40,8 @@ export class UserService {
   }
 }
 ```
-
-Creating a Service: 
+----
+Creating a Service:   
 `ng g s serviceFolder/serviceName`
 
 if `ng generate service user`
