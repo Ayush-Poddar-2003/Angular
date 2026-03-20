@@ -9,11 +9,14 @@ Example responsibilities of a service:
 ![alt text](image-26.png)
 ---
 
-## Why Angular Uses Services ?
+# Dependency Injection ?
+DI is a pattern where Angular creates and supplies (injects) the dependencies (services) your class needs — you just declare them in the constructor.
+
+---
+#### Why Angular Uses Services ?
 
 Imagine you have 3 components:  
-HomeComponent, DashboardComponent, ProfileComponent  
-
+HomeComponent, DashboardComponent, ProfileComponent    
 All three need user data from an API.
 ```
 HomeComponent → API
@@ -73,30 +76,21 @@ Tells Angular "This class can be injected into other classes."
 # Using a Service in a Component
 
 ```ts
-// UserService
+// user.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
 
+export class UserService {
   getUsers() {
     return ["John", "Sara", "Mike"];
   }
-
 }
 ```
 ```ts
 // home.ts
-import { Component } from '@angular/core';
-import { UserService } from './user.service'; //importing service
-
-@Component({
-  selector: 'app-home',
-  template: `<p>{{ users }}</p>`
-})
-
 export class HomeComponent {
 
   users: string[] = [];
@@ -110,9 +104,4 @@ export class HomeComponent {
 
 }
 ```
-
-```html
-<li *ngFor="let user of users">
-  {{ user }}
-</li>
-```
+---

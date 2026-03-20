@@ -11,6 +11,30 @@ A feature that gives more power to DOM Elements.
 
 
 ---
+### <center>ngIf
+
+> Step 1 : Import `CommonModule` or `NgIf` in imports of .ts file
+ 
+```ts
+export class App {
+  isLoggedOut = false;
+}
+```
+```html
+<h1>ngIf</h1>
+
+<div *ngIf="isLoggedOut; else elseBlock">
+    <a href="/">Login</a>
+</div>
+
+<ng-template #elseBlock>
+    <a href="/">Logout</a>
+</ng-template>
+```
+
+![alt text](image-17.png) ![alt text](image-18.png)
+
+---
 ### *ngFor
 We can use loops in template file(.html)
 
@@ -54,31 +78,14 @@ export class App {
     </li>
 </ul>
 ```
-
-![alt text](image-16.png)
-
 ---
 
-### ngIf
- 
-```ts
-export class App {
-  isLoggedOut = false;
-}
-```
-```html
-<h1>ngIf</h1>
+===
+![alt text](image-16.png)
 
-<div *ngIf="isLoggedOut; else elseBlock">
-    <a href="/">Login</a>
-</div>
+3F4Y 
+---
 
-<ng-template #elseBlock>
-    <a href="/">Logout</a>
-</ng-template>
-```
-
-![alt text](image-17.png) ![alt text](image-18.png)
 
 ---
 ### ngSwitch

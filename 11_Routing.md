@@ -1,7 +1,6 @@
 # Routing
 
-1. Generate all required components
-2. Go to `app.routes.ts`
+1. Go to `app.routes.ts`
     ```ts
     import { Routes } from '@angular/router';
     import { About } from './about/about';
@@ -9,7 +8,6 @@
     import { Contact } from './contact/contact';
 
     export const routes: Routes = [
-        // Add path & component
         {path:'about', component:About},
         {path:'login', component:Login},
         {path:'contact', component:Contact}
@@ -32,12 +30,12 @@
         </li>
     </ul>
 
-    <router-outlet/>
+    <router-outlet/> //Where to attach
     ```
 ![alt text](image-20.png)
 
----
 
+---
 ### <center> 404
 
 When some route doesnot exists, it open that page
@@ -50,27 +48,28 @@ export const routes: Routes = [
 ];
 ```
 ---
+### <center> PRACTICAL
 
-### To Do Lecture 36 3
-
-#### 1. 
+![alt text](image-30.png)
 
 ```html
-<!-- home.html -->
-<a [routerLink]="['profile', {name:'Ayush Poddar'}]">Go To Profile Page</a>
+<button routerLink=""> Click to go to Home </button>
 
-<!-- Earlier -->
- <a routerLink="profile">Go To Profile Page</a>
+<button routerLink="/dataBinding"> Click to go DataBinding </button>
+
+<!--OTHER WAY -->
+<button (click)="navigatetohome()">Click to go home via .ts</button>
 ```
+
 ```ts
-export class Profile {
+export class Routing {
 
-  userName: string|null = "";
+  //Create router obect first
+  constructor(private rt: Router){}
 
-  constructor(private route:ActivatedRoute){}
-
-  ngOnInit(){
-    this.userName = this.route.snapshot.paramMap.get('name');
+  //Use navigateByUrl() function
+  navigatetohome(){
+    this.rt.navigateByUrl("/")
   }
 }
 ```

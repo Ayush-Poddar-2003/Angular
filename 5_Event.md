@@ -1,6 +1,6 @@
 # Events
 
-Event binding is used to send data from HTML to the component when an event happens.
+Event binding is used to send data from HTML to the component during an event.
 
 ```html
 <!-- app.html -->
@@ -28,7 +28,7 @@ export class App
 ### Mouse Event -
 ```ts
 export class App {
-  handleEvent(event:MouseEvent){ //MouseEvent as Datatype
+  handleEvent(event:MouseEvent){ //MouseEvent
     console.log("Function Called: ", event);
     console.log("Event Type: ", event.type);
     console.log("Event Target: ", event.target);
