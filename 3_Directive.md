@@ -97,12 +97,8 @@ names = ["Ayush", "Raj", "Kunal", "Meera"];
 A Structural Directive
 
 ```html
-<h1>ngSwitch</h1>
-
 <div [ngSwitch]="color">
     <h1 *ngSwitchCase="'red'" style="background-color: red;">Red</h1>
-    <h1 *ngSwitchCase="'blue'" style="background-color: rgb(4, 0, 255);">Blue</h1>
-    <h1 *ngSwitchCase="'green'" style="background-color: rgb(51, 255, 0);">Green</h1>
     <h1 *ngSwitchCase="'yellow'" style="background-color: rgb(251, 255, 0);">Yellow</h1>
 </div>
 ```
@@ -112,3 +108,44 @@ export class App {
 }
 ```
 ![alt text](image-19.png)
+
+---
+### <center> *ngClass
+ngClass is used to add or remove CSS classes dynamically based on: conditions, values, API data, loop index etc.
+
+`[ngClass]="{ 'CSS_CLASS_NAME': CONDITION }"`
+
+```ts
+isActive = true;
+```
+
+```html
+<p [ngClass]="{ 'highlight': isActive }">Hello Ayush</p>
+```
+
+```css
+.highlight { color: #e11d48; font-weight: 600; }
+```
+---
+#### ngClass with MULTIPLE CLASSE :-
+```html
+<span [ngClass]="{
+  'active-user': userStatus === 'active',
+  'pending-user': userStatus === 'pending',
+  'blocked-user': userStatus === 'blocked'
+}">   {{ userStatus }}  </span>
+```
+---
+### ngClass with ARRAY :-
+Use it when:
+You want to apply multiple classes directly.
+```html
+<div [ngClass]="['card', isBig ? 'big' : 'small']">
+  Card Example
+</div>
+```
+```css
+.card { padding: 8px; border: 1px solid #ccc; }
+.big { font-size: 24px; }
+.small { font-size: 14px; }
+```
