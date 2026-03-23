@@ -4,8 +4,14 @@
 Released in 2010 by Google  
 Created by Misko Hevery and Adam Abrons  
 Originally called AngularJS(Depreciated), currently we use Angular.  
-A JS Framework, Based on MVC Architecture.  
 
+A JS Framework, Based on MVC Architecture.  
+1. MODEL  
+Data + Logic, What data do we have and how do we handle it?
+2. VIEW  
+UI, View is the screen the user sees.
+3. CONTROLLER  
+Middleman, connects View ↔ Model
 
 ---
 INSTALLATION ?
@@ -48,14 +54,7 @@ Angular projects have:
 Without CLI → setup would take 1–2 hours manually.  
 With CLI → 1 command.
 
----
-
-### REACT Vs ANGULAR  
-    npm create vite@latest → ng new  
-    npm run dev            → ng serve  
-    Dev server default port:  
-      Vite → 5173  
-      Angular → 4200
+      Angular → PORT:4200
 
 ---
 ### FILE & FOLDER STRUCTURE :-  

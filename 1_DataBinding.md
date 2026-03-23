@@ -1,5 +1,5 @@
 # DATA BINDING
-Data Binding in Angular connects your component (TypeScript logic) with the template (HTML view).  
+Data Binding in Angular connects your (TypeScript logic) with the template (HTML view).  
 It allows data to flow between them so the UI updates automatically.
 
 - **One way (.ts -> .html)** :  
@@ -32,26 +32,27 @@ export class App
 
 <h2>{{ getGreeting() }}</h2>
 ```
-
+![alt text](image-31.png)
 ---
 
 ### 2.   Property Binding
-Sending data from your component (TypeScript file) to the HTML element property.
 
-`[elementProperty]="value"`
+`[elementProperty]="value"`, value is stored as variable
 
 ```ts
 export class AppComponent {
-  imageUrl = "https://picsum.photos/200";
+  imageUrl = "https://picsum.photos/200"; //variable
 }
 ```
 ```html
 <img [src]="imageUrl">
 ```
 
+---
 ### 3. Event Binding
 
 ```ts
+//to be used on events
 showMessage(){
   alert("Hello")
 }
@@ -75,9 +76,14 @@ showMessage(){
 
 > Step 2 : Use `[(ngModel)]="Variable"` where we want to store from .html
 
+```ts
+firstName:string = "";
+city:string = "";
+```
+
 ```html
 <input type="text" [(ngModel)]="firstName">
-<!-- input text will be addign to firstName -->
+<!-- input  will be assigned to firstName -->
 
 <select [(ngModel)]="City">
   <option value="Pune">Pune</option>

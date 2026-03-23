@@ -11,84 +11,89 @@ A feature that gives more power to DOM Elements.
 
 
 ---
-### <center>ngIf
-
-> Step 1 : Import `CommonModule` or `NgIf` in imports of .ts file
+### <center> *ngIf
+ngIf is used to show or hide something in HTML based on a condition.
+> Step 1 : Import `CommonModule` or `NgIf` directly in imports section of .ts
  
 ```ts
-export class App {
-  isLoggedOut = false;
-}
+dataLoaded = true;
 ```
 ```html
-<h1>ngIf</h1>
+<p *ngIf="dataLoaded; else loadingBlock">Oh yess Data Loaded!</p>
 
-<div *ngIf="isLoggedOut; else elseBlock">
-    <a href="/">Login</a>
-</div>
-
-<ng-template #elseBlock>
-    <a href="/">Logout</a>
+<ng-template #loadingBlock>
+  <p>Loading...</p>
 </ng-template>
 ```
 
-![alt text](image-17.png) ![alt text](image-18.png)
+The element is not just hidden with CSS.
+It is removed from the DOM.
+
+So:  
+❌ It doesn’t take space
+❌ It’s not clickable
+❌ It’s not in the code
+❌ It doesn’t exist on the page at all  
+It’s like it was never written.
 
 ---
-### *ngFor
-We can use loops in template file(.html)
+### <center> *ngFor
+ngFor is used to loop through a list (array) and show items one-by-one in HTML.
 
 ```ts
-export class App {
-  students = ["AYush", "Aditi", "Viman"];
-
-  studentsData = [
-    {
-      name:"Lana",
-      age:"29",
-      email:"lana@gmail.com"
-    },
-    {
-      name:"Dani",
-      age:"21",
-      email:"Dani@gmail.com"
-    },
-        {
-      name:"Jonny",
-      age:"19",
-      email:"Jonny@gmail.com"
-    }
-  ]
-}
+names = ["Ayush", "Raj", "Kunal"];
 ```
+
 ```html
-<h1>ngFor</h1>
-
-<ul>
-    <li *ngFor="let x of students">
-        {{x}}
-    </li>
-</ul>
-
-<hr>
-
-<ul>
-    <li *ngFor="let s of studentsData">
-         {{s.name}} , {{s.age}} , {{s.email}}
-    </li>
-</ul>
+<p *ngFor="let n of names">{{ n }}</p>
+<!-- For each value inside names, create one copy of the HTML used with ngFor -->
 ```
+![alt text](image-32.png)
+
+It creates or destroys DOM elements for each item in the list.
+
+**NOTE :-**  
+*ngFor gives you extra info for every loop item, called **context variables**.  
+One of these is **index** → the position number of the current item (starts at 0).  
+
+```ts
+*ngFor="let name of names; let i = index"
+```
+`let i = index`=> Create a local variable called i and assign the current item’s index to it.
+
+Other context variables: first, last, even, odd, count.
+- isFirst gets true only for the first item
+- isLast gets true only for the last item
+- total = total items
+- isEven = index is even
+- isOdd = index is odd
+
+```ts
+names = ["Ayush", "Raj", "Kunal", "Meera"];
+```
+
+```html
+<div *ngFor="let name of names; let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd;
+      let total = count">
+
+  {{ i }} - {{ name }}
+  | first: {{ isFirst }}
+  | last: {{ isLast }}
+  | even: {{ isEven }}
+  | odd: {{ isOdd }}
+  | count: {{ total }}
+
+</div>
+```
+
+![alt text](image-33.png)
+
 ---
-
-===
-![alt text](image-16.png)
-
-3F4Y 
----
-
-
----
-### ngSwitch
+### <center>*ngSwitch
 A Structural Directive
 
 ```html
