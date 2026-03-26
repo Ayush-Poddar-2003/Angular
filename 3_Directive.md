@@ -93,6 +93,15 @@ names = ["Ayush", "Raj", "Kunal", "Meera"];
 ![alt text](image-33.png)
 
 ---
+### <center>@for (new way)
+```ts
+@for (item of items; track item) {
+  <div>{{ item }}</div>
+}
+```
+
+
+---
 ### <center>*ngSwitch
 A Structural Directive
 

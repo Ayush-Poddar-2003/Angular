@@ -1,29 +1,19 @@
 # Services 
 A service is a class used to store reusable logic or data that multiple components can use.
 
-Example responsibilities of a service:
-- calling APIs
-- authentication
-- sharing data between components
+- calling APIs, authentication, sharing data between components
 
-![alt text](image-26.png)
----
 
-# Dependency Injection ?
-DI is a pattern where Angular creates and supplies (injects) the dependencies (services) your class needs — you just declare them in the constructor.
-
----
-#### Why Angular Uses Services ?
 
 Imagine you have 3 components:  
 HomeComponent, DashboardComponent, ProfileComponent    
-All three need user data from an API.
+All three need **UserData** from an API.
 ```
 HomeComponent → API
 DashboardComponent → API
 ProfileComponent → API
 ```
-You will repeat the same code.  
+You will repeat the same code with all component.  
 Instead you create one service:  
 
 ```
@@ -33,27 +23,19 @@ HomeComponent → UserService
 DashboardComponent → UserService
 ProfileComponent → UserService
 ```
+![alt text](image-26.png)
 
-## What a Service Looks Like ?
-A service is just a TypeScript class.
-```ts
-export class UserService {
-  getUsers(){
-    return ["John", "Sara", "Mike"]
-  }
-}
-```
+
+# Dependency Injection ?
+DI is a pattern where Angular creates & supplies(injects) the dependencies(services) your class needs  
+— you just declare them in the constructor.
+
+
 ----
-Creating a Service:   
+### Creating a Service:   
 `ng g s serviceFolder/serviceName`
 
-if `ng generate service user`
-Angular will create:
-```
-user.service.ts
-user.service.spec.ts
-```
----
+
 ```ts
 import { Injectable } from '@angular/core';
 
@@ -63,17 +45,18 @@ import { Injectable } from '@angular/core';
 
 export class UserService {
 
+  //what to return
   getUsers() {
     return ["John", "Sara", "Alex"];
   }
 
 }
 ```
-### What is @Injectable?  
+### @Injectable?  
 Tells Angular "This class can be injected into other classes."
 
 ---
-# Using a Service in a Component
+### Using a Service in a Component
 
 ```ts
 // user.service.ts
@@ -99,9 +82,15 @@ export class HomeComponent {
   constructor(private us: UserService) 
   {
     this.users = this.us.getUsers();
-    //this.us => service object, hence used to call
   }
-
 }
 ```
 ---
+
+```ts
+// Old way
+constructor(private userService: UserService) {}
+
+// New way
+const userService = inject(UserService);
+```
