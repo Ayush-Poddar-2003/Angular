@@ -1,4 +1,0 @@
-
-
-
-### Contextual Variables

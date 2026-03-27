@@ -4,8 +4,6 @@ Event binding is used to send data from HTML to the component during an event.
 
 ```html
 <!-- app.html -->
-<h1>Events Tutorial</h1>
-
 <button class="btn" name="btname" (click)="handleEvent($event)"> Click Event </button>
 ```
 ```ts
