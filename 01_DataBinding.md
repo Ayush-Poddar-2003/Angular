@@ -1,11 +1,14 @@
 # DATA BINDING
-Data Binding in Angular connects your (TypeScript logic) with the template (HTML view).  
+Data Binding in Angular connects the Component class (TypeScript) with the Template (HTML) so the UI stays in sync with data.   
 It allows data to flow between them so the UI updates automatically.
 
-- **One way (.ts -> .html)** :  
-Interpolation, Property Binding, Event Binding
+- **One way binding** :
+  - .ts → .html : Interpolation, Property Binding [ ]
+  - .html → .ts : Event Binding ( )
+
 - **Two way (.ts <-> .html)** :  
-ngModels directives
+  - Combines { `Property[ ] and Event Binding( )` }
+  - `[(ngModel)]`
 
 ---
 
@@ -37,7 +40,8 @@ export class App
 
 ### 2.   Property Binding
 
-`[elementProperty]="value"`, value is stored as variable
+`[elementProperty]="value"`,  
+value is a component property (TypeScript variable)
 
 ```ts
 export class AppComponent {
@@ -53,42 +57,17 @@ export class AppComponent {
 
 ```ts
 //to be used on events
-showMessage(){
-  alert("Hello")
+showMessage(event: Event) {
+  console.log(event);
 }
 ```
 ```html
-<button (click)="showMessage()"> Click </button>
+<button (click)="showMessage($event)">Click</button>
 
 <select (change)="showMessage()">
     <option value="Pune">Pune</option>
     <option value="Nagpur">Nagpur</option>
     <option value="Mumbai">Mumbai</option>
     <option value="Delhi">Delhi</option>
-</select>
-```
-
----
-
-# <center> 2 Way Binding
-
-> Step 1 : Import `FormsModule` in .ts file where we want data
-
-> Step 2 : Use `[(ngModel)]="Variable"` where we want to store from .html
-
-```ts
-firstName:string = "";
-city:string = "";
-```
-
-```html
-<input type="text" [(ngModel)]="firstName">
-<!-- input  will be assigned to firstName -->
-
-<select [(ngModel)]="City">
-  <option value="Pune">Pune</option>
-  <option value="Nagpur">Nagpur</option>
-  <option value="Mumbai">Mumbai</option>
-  <option value="Delhi">Delhi</option>
 </select>
 ```
