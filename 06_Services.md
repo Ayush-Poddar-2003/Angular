@@ -26,6 +26,9 @@ ProfileComponent → UserService
 ![alt text](image-26.png)
 
 
+
+
+
 # Dependency Injection ?
 DI is a pattern where Angular creates & supplies(injects) the dependencies(services) your class needs  
 — you just declare them in the constructor.
