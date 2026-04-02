@@ -1,12 +1,10 @@
 # Services 
-A service is a class used to store reusable logic or data that multiple components can use.
-
-- calling APIs, authentication, sharing data between components
-
+A class to store reusable logic/data that multiple components can use.
 
 
 Imagine you have 3 components:  
-HomeComponent, DashboardComponent, ProfileComponent    
+- HomeComponent, DashboardComponent, ProfileComponent    
+
 All three need **UserData** from an API.
 ```
 HomeComponent → API
@@ -25,13 +23,10 @@ ProfileComponent → UserService
 ```
 ![alt text](image-26.png)
 
+---
+Components → UI logic  
+Services → Business logic & data
 
-
-
-
-# Dependency Injection ?
-DI is a pattern where Angular creates & supplies(injects) the dependencies(services) your class needs  
-— you just declare them in the constructor.
 
 
 ----
@@ -55,11 +50,21 @@ export class UserService {
 
 }
 ```
-### @Injectable?  
+`@Injectable` :  
 Tells Angular "This class can be injected into other classes."
 
+`providedIn: 'root'` :  
+Angular will create 1 single instance of this service & share it across the whole app, 
+So if :  
+- Component A updates data in the service 
+- Component B sees the updated data
+
 ---
-### Using a Service in a Component
+### Dependency Injection ?
+DI is a pattern where Angular creates service & supplies(injects) the dependencies(services) to all your classes.  
+We just declare them in the constructor.
+
+---
 
 ```ts
 // user.service.ts
@@ -68,32 +73,38 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-
 export class UserService {
-  getUsers() {
-    return ["John", "Sara", "Mike"];
+
+  username = 'Ayush';
+
+  getUsername() {
+    return this.username;
   }
 }
 ```
 ```ts
-// home.ts
+// Component.ts
+import { Component } from '@angular/core';
+import { UserService } from './user.service';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html'
+})
 export class HomeComponent {
 
-  users: string[] = [];
- 
-  // give me an instance of UserService & store it in variable → us
-  constructor(private us: UserService) 
-  {
-    this.users = this.us.getUsers();
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    console.log(this.userService.getUsername());
   }
 }
 ```
 ---
 
 ```ts
-// Old way
 constructor(private userService: UserService) {}
 
-// New way
+// Alternate way
 const userService = inject(UserService);
 ```

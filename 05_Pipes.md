@@ -6,8 +6,7 @@ Css can be used too but this is much faster
 
 Pipes are for display,  
 Do NOT modify actual data  
-Used ONLY in HTML templates  
-They work together with interpolation {{ }}.
+Used ONLY in HTML templates with interpolation {{ }}.
 
 Syntax
 > {{ value | pipeName }}
