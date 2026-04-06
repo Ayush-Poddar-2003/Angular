@@ -187,7 +187,44 @@ ngOnInit() {
   console.log(id);
 }
 ```
+---
+### <center> - Query Parameters -
 
+```
+/route?key1=value1&key2=value2
+```
+```
+/products?category=mobile&page=2
+```
+
+- `/products` → route path
+- `?category=mobile&page=2` → query parameters
+
+
+Query parameters are used when:
+- The same component stays active
+- Only filtering / sorting / extra options change
+
+**Reading Query Parameters in a Component**
+
+Step 1: Inject ActivatedRoute
+```ts
+import { ActivatedRoute } from '@angular/router';
+
+constructor(private route: ActivatedRoute) {}
+```
+Step 2: Read query parameters
+```ts
+ngOnInit() {
+  this.route.queryParams.subscribe(params => {
+    console.log(params['category']);
+    console.log(params['page']);
+  });
+}
+```
+✅ params is an object  
+✅ Keys come from the URL  
+✅ Values are always strings
 
 ---
 ### Steps :-
