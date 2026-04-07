@@ -8,30 +8,28 @@ Originally called **AngularJS (Deprecated)**, currently **Angular (2+)**.
 > ⚠️ AngularJS and Angular (2+) are different frameworks.
 
 ---
-### AngularJS Architecture → MVC
+### AngularJS(Old) Architecture : MVC
 1. **MODEL**  
-Data + Business Logic — what data we have and how we handle it.
+Data + Business Logic — what data we have, how we handle it.
 
 2. **VIEW**  
-UI — the screen the user sees.
+UI — The screen user sees.
 
 3. **CONTROLLER**  
 Middleman — connects View ↔ Model.
 
-### Angular (2+) Architecture → Component-Based
-Angular (2+) does **not** use MVC or Controllers.  
+### Angular (2+) Architecture : Component-Based  
 It uses **Components + Services + Dependency Injection**.
 
 ---
 ### INSTALLATION ?
 
 Go to https://angular.dev/installation  
-
 Install Angular CLI (@angular/cli) once using  
-`npm i -g @angular/cli`  -g means global
 
-Verify using 
-`ng version`
+    npm i -g @angular/cli  //-g means global
+
+    ng version //to verify
 
 ---
 ### For Every New Project:-
@@ -51,7 +49,7 @@ TO SEE ALL ng commands `ng help`
 Tool that helps developers  
 Create, build, test, and deploy angular applications.  
 
----
+
 **WHY WE NEED IT ?**  
 Angular projects have:
 - Strict structure
@@ -62,8 +60,6 @@ Angular projects have:
 
 Without CLI → setup would take 1–2 hours manually.  
 With CLI → 1 command.
-
-      Angular → PORT:4200
 
 ---
 ### FILE & FOLDER STRUCTURE :-  
@@ -89,7 +85,7 @@ Root Level :-
 - tsconfig.spec.json : TypeScript config for test files.             
 
 ---
-# <center>TYPES
+## <center>TYPES
 
 ### STYLE 1: MODULE-BASED
 (Angular 2 → Angular 14)

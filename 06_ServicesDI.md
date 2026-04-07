@@ -23,11 +23,6 @@ ProfileComponent → UserService
 ```
 ![alt text](image-26.png)
 
----
-Components → UI logic  
-Services → Business logic & data
-
-
 
 ----
 ### Creating a Service:   

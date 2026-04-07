@@ -2,7 +2,7 @@
 Way to transform data,  
 E.g. changing case, currency symbol etc..
 
-Css can be used too but this is much faster
+CSS can be used too but this is much faster
 
 Pipes are for display,  
 Do NOT modify actual data  

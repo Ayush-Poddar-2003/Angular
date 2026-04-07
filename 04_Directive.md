@@ -1,15 +1,16 @@
 # Directive
 
-A directive is a class that tells Angular how to modify or control DOM elements.  
-If Components build the UI,
-Directives control how that UI behaves.
+A directive is a class that tells Angular how to modify/control DOM elements.  
+If Components -> build the UI,  
+Directives -> control how that UI behaves.
 
 
 | Type                 | Purpose                     | Example              |
 | -------------------- | --------------------------- | -------------------- |
 | Structural Directive | Changes DOM structure, decide whether an element exists in the DOM or not, Always prefixed with *       | `*ngIf`, `*ngFor`, `*ngSwitch`    |
 | Attribute Directive  | Changes style/behavior, Do not remove elements from DOM, Applied as attributes, No *, change how an element behaves, not whether it exists. | `ngClass`, `ngStyle`, `ngModel` |
-> We need to import CommonModule for almost every directive, just FormsModule for ngModel
+> We need to import **CommonModule** for almost every directive,  
+& **FormsModule** for ngModel
 ```ts
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -69,10 +70,8 @@ names = ["Ayush", "Raj", "Kunal"];
 
 > It creates or destroys DOM elements for each item in the list.
 
-**NOTE :-**  
-Angular gives you extra information per loop item, called context variables.     
-One of these is `index` → the position of the current item (starts at 0).  
-Other context variables: first, last, even, odd, count.
+**CONTEXT VARIABLES ?**  
+Angular gives you extra information per loop item, called context variables :-  index, first, last, even, odd, count.
 
 ```ts
 names = ["Ayush", "Raj", "Kunal", "Meera"];

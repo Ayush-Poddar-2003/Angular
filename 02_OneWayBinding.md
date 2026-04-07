@@ -1,14 +1,12 @@
 # DATA BINDING
-Data Binding in Angular connects the Component class (TypeScript) with the Template (HTML) so the UI stays in sync with data.   
-It allows data to flow between them so the UI updates automatically.
+Connects the (.ts) file with the Template (.html) file so the UI stays in sync with data.   
 
-- **One way binding** :
-  - .ts → .html : Interpolation, Property Binding [ ]
+> **One way binding** :
+  - .ts → .html : Interpolation { }, Property Binding [ ]
   - .html → .ts : Event Binding ( )
 
-- **Two way (.ts <-> .html)** :  
-  - Combines { `Property[ ] and Event Binding( )` }
-  - `[(ngModel)]`
+> **Two way (.ts <-> .html)** :  
+  - Combines `Property[] & Event Binding()`  ie. `[(ngModel)]`
 
 ---
 

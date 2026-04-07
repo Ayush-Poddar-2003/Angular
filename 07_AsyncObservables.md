@@ -17,25 +17,7 @@ Solutions :-
 2. Promises ✅ better
 3. Observables** ✅ powerful (Angular choice)
 
----
-# API
 
-Js can't be connected directly to your DB, as they executes on browser not on server
- 
-We have Server side scripting languages like java, python, node they can execute on server, we connect them with DB => Creates API
-
-![alt text](image-27.png)
-
-An API allows your Angular frontend to talk to a backend server.
-
----
-# HTTP Client
-Angular provides a built‑in service called: HttpClient
-
-It handles:  
-API calls, JSON conversion, Errors, Observables (streamed responses)
-
->  Import HttpClientModule
 
 ---
 ### <center> Observables ?
@@ -47,7 +29,8 @@ It can :-
 - Perfect for APIs, events, streams
 
 ```ts
-this.http.get('/api/users'); //returns observable
+this.http.get('/api/users');  
+//returns observable, future upcoming data
 ```
 
 ```ts
@@ -69,11 +52,6 @@ Until you subscribe:
     
     Observable = recipe
     subscribe() = cooking the food
-```ts
-this.userService.getUsers().subscribe(data => {
-  this.users = data;
-});
-```
 
 What happens when you subscribe?
 1. Starts HTTP request
@@ -117,7 +95,7 @@ export class HomeComponent implements OnInit {
   constructor(private us: UserService){} //child of service
 
   ngOnInit() {
-    this.userService.getUsers().subscribe((data) => {
+    this.us.getUsers().subscribe((data) => {
       this.usersArr = data;
     });
   }

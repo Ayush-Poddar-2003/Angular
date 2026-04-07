@@ -1,17 +1,11 @@
 ## TWO‑WAY DATA BINDING
 
-Two‑way binding keeps a **component variable (.ts)** and an  
-**input element (.html)** in sync automatically.
-
-### What does that mean?
-- When the user types in the input → the variable updates ✅
+- When the user types in the input → the .ts variable updates ✅
 - When the variable changes in .ts → the input updates ✅
-
-This is called **two‑way data binding**.
 
 ---
 
-### How Angular does this
+### How Angular does this ?
 
 Angular provides the directive: `[(ngModel)]`
 
@@ -36,7 +30,7 @@ So data flows in **both directions**.
 (ngModelChange) → send value back to TS
 
 ---
-### Why FormsModule ?
+### Imports ?
 
 ngModel is NOT built‑in, It comes from FormsModule
 
