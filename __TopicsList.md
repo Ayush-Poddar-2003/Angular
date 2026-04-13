@@ -1,148 +1,178 @@
-# Angular Learning Index
+# 📘 Angular Complete Study Index
 
-
-## 1. Introduction
-- Angular overview ✅
-- Angular vs AngularJS ✅
-- SPA concept ✅
-- Angular CLI basics ✅
-- Project & folder structure ✅
-
----
-
-## 2. Components
-- What is a Component ✅
-- Component structure (`.ts`, `.html`, `.css`) ✅
-- `@Component` decorator ✅
-- `selector` and where it is used ✅
-- Standalone components (basics) ✅
+## 0. Prerequisites 
+- TypeScript Fundamentals
+  - Types & Interfaces
+  - Classes & Access Modifiers
+  - Generics
+  - Utility Types
+- ES6+ JavaScript Concepts
 
 ---
 
-## 3. Data Binding
-- Interpolation (`{{ }}`) ✅
-- Property Binding (`[ ]`) ✅
-- Event Binding (`( )`) ✅
-- Two‑Way Binding (`[(ngModel)]`) ✅
-- FormsModule (basic usage) ✅
+## 1. Angular Overview & Architecture ✅
+- What is Angular
+- SPA vs MPA
+- Angular CLI
+- Project Structure
+- Bootstrapping Flow
+---
+
+## 2. Angular Modules
+- NgModule Basics
+- AppModule
+- Feature Modules
+- Shared Module
+- Core Module
+- Lazy Loaded Modules
 
 ---
 
-## 4. Directives
-### Structural Directives
-- What Directives are ✅
-- Directive classification ✅
-- `*ngIf` ✅
-- `*ngFor` ✅
+## 3. Components
+- Component Anatomy
+- Template, Styles & Logic
+- Lifecycle Hooks
+  - `ngOnInit`
+  - `ngOnChanges`
+  - `ngOnDestroy`
+- Smart vs Dumb Components
 
-### Attribute Directives
-- `ngClass
-- `ngStyle
-- `ngModel` ✅ (covered with Data Binding)
+---
 
-### Other Directives
-- `*ngSwitch`
+## 4. Data Binding
+- Interpolation
+- Property Binding
+- Event Binding
+- Two-Way Binding (`ngModel`)
+- Change Detection Basics
+
+---
+
+## 5. Component Communication
+- `@Input()`
+- `@Output()`
+- `EventEmitter`
+- Parent–Child Interaction
+
+---
+
+## 6. Directives
+- Structural Directives
+  - `*ngIf`
+  - `*ngFor`
+  - `*ngSwitch`
+- Attribute Directives
+  - `ngClass`
+  - `ngStyle`
 - Custom Directives
 
 ---
 
-## 5. Pipes
-### Core Pipes
-- What Pipes are ✅
-- Built‑in Pipes (date, currency, uppercase, etc.) ✅
-- Pipe syntax (`{{ value | pipe }}`) ✅
-- Display‑only behavior ✅
-- Custom Pipe (concept) ✅
-
-### Advanced Pipes
-- Async Pipe
+## 7. Pipes
+- Built-in Pipes
+- Custom Pipes
 - Pure vs Impure Pipes
+- Async Pipe
 
 ---
 
-## 6. Services & Dependency Injection
-### Core Concepts
-- Why Services exist ✅
-- Separation of Concerns ✅
-- `@Injectable` ✅
-- `providedIn: 'root'` ✅
-- Dependency Injection ✅
-- Constructor Injection ✅
-- `inject()` awareness ✅
-
-### Advanced Concepts
-- Service scopes
-- Multiple services communication
+## 8. Services & Dependency Injection
+- Why Services Are Needed
+- Creating and Using Services
+- Dependency Injection System
+- Provider Scopes
+- Singleton Behavior
 
 ---
 
-## 7. HTTP & APIs
-### Core HTTP
-- Why API calls live in Services ✅
-- `HttpClient` & `HttpClientModule` ✅
-- GET requests ✅
-- POST requests ✅
-- Observables (concept) ✅
-- `subscribe()` usage ✅
-- Working GET & POST flow ✅
-
-### Advanced HTTP
-- Error handling
-- DELETE / PUT / PATCH
-- HTTP interceptors
-
----
-
-## 8. Routing
-### Core Routing
-- What Routing is (SPA behavior) ✅
-- Routing Building Blocks ✅
-- Route Configuration (`path`, `component`) ✅
-- Default Route (`''`) ✅
-- 404 / Wildcard Route (`**`) ✅
-- Navigation (`routerLink`, programmatic) ✅
-- Route Parameters (`:id`) ✅
-
-### Advanced Routing
-- Query Parameters
+## 9. Routing & Navigation
+- RouterModule
+- Route Configuration
+- `router-outlet`
+- Navigating Routes
+- Route Parameters
+- Child Routes
 - Route Guards
-- Auth Guards
-- Child / Nested Routes
-- Lazy Loading
-- Route Data & Resolvers
+- Lazy Loading Routes
 
 ---
 
-## 9. Forms
-### Template‑Driven Forms
-- ngForm
+## 10. Forms
+### Template-Driven Forms
+- `ngForm`
 - Validation
-- Form submission flow
 
 ### Reactive Forms
-- FormGroup & FormControl
+- `FormGroup`
+- `FormControl`
+- `FormBuilder`
 - Validators
-- Dynamic forms
-- FormBuilder
+- Custom Validators
+- Dynamic Forms
 
 ---
 
-## 10. Lifecycle Hooks
-- `ngOnInit`
-- `ngOnChanges`
-- `ngOnDestroy`
-- Lifecycle flow & cleanup
+## 11. HTTP & Backend Communication
+- HttpClientModule
+- GET, POST, PUT, DELETE
+- Error Handling
+- Loading States
+- HTTP Interceptors
 
 ---
 
-## 11. Authentication & Authorization
-- Auth flow using Services
-- Route protection with Guards
-- Login / Logout handling
+## 12. RxJS & Observables
+- Observables vs Promises
+- `subscribe`
+- Operators
+  - `map`
+  - `tap`
+  - `switchMap`
+- Subjects & BehaviorSubject
+- Unsubscribing & Memory Leaks
 
 ---
 
-## 12. State & Advanced Patterns
-- Shared state via Services
-- Observables for state
-- Basic app architecture patterns
+## 13. Authentication & Authorization
+- Login & Logout Flow
+- Token Handling
+- Route Protection
+- Interceptor-based Auth
+
+---
+
+## 14. Change Detection & Performance
+- Default Change Detection
+- `OnPush` Strategy
+- Async Pipe Optimization
+
+---
+
+## 15. Project Structure & Best Practices
+- Folder Organization
+- Reusable Components
+- Environment Configuration
+- Code Scalability Patterns
+
+---
+
+## 16. Testing
+- Unit Testing Basics
+- Component Testing
+- Service Testing
+- Jasmine & Karma Overview
+
+---
+
+## 17. Build & Deployment
+- Production Builds
+- Environment Files
+- Optimization Techniques
+
+---
+
+## 18. Practice & Projects
+- CRUD Application
+- Authentication App
+- Dashboard Application
+- Forms-Based Application
