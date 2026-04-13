@@ -18,7 +18,7 @@
 - Bootstrapping Flow
 ---
 
-## 2. Angular Modules
+## 2. Angular Modules ✅
 - NgModule Basics
 - AppModule
 - Feature Modules

@@ -151,6 +151,57 @@ export class AppComponent {
 }
 ```
 
+# Module
+An Angular Module is:  
+A container that groups related components, directives, pipes, and services.
+
+If EVERYTHING lives in one place:  
+❌ files become messy
+❌ hard to maintain
+❌ slow loading
+
+---
+
+### AppModule ?
+- Students = Components
+- Subjects = Angular features (Forms, HTTP, routing)
+- College administration = AppModule
+
+one main file that tells me everything
+
+#### What Does AppModule Contain?
+1. Declarations Box: “Which components are part of my app?”
+2. Imports Box: Which powers does my app have?
+3. Bootstrap Box: Which component should i show first
+4. Provider Box: Which services are available app‑wide?
+```ts
+//app.module.ts
+
+@NgModule({ //decorator
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule   // 👈 needed for ngModel
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+> AppModule = permission list for the whole app  
+> Standalone component = permission list for itself
+
+```
+AppModule (root)
+ ├── CoreModule (services, guards)
+ ├── SharedModule (UI, pipes)
+ ├── AuthModule (feature)
+ ├── AdminModule (feature)
+ └── UserModule (feature)
+```
+
 ---
 
 # <center> SPA vs MPA
