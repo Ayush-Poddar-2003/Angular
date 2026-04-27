@@ -57,7 +57,7 @@ So if :
 ---
 ### Dependency Injection ?
 DI is a pattern where Angular creates service & supplies(injects) the dependencies(services) to all your classes.  
-We just declare them in the constructor.
+We just declare them in the constructor in .ts file.
 
 ---
 

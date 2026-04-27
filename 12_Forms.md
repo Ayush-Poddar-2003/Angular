@@ -1,7 +1,23 @@
 # Form
 
-Types :- Reactive | Template
+### 1️⃣ TEMPLATE-DRIVEN FORMS
+👉 Simple  
+👉 Logic mostly in HTML  
+👉 Uses ngModel  
 
+### 2️⃣ REACTIVE FORMS
+
+👉 More control  
+👉 Logic in TypeScript  
+👉 Uses FormGroup, FormControl
+
+---
+Using Template driven
+[Code](03_TwoWayBinding.md)
+
+
+
+---
 ## Reactive
 When complexity is there 
 
