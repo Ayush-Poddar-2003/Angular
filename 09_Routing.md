@@ -30,31 +30,15 @@ When the URL changes, Angular routing:
 ✅ Keeps the app running (no reload)
 
 ---
-### Building Blocks of Angular Routing :-
-
-1. Routes (Route Configuration) :  
-URL part ↔ Component, describe what should happen
-2. Router :  
-decides what is active
-3. `<router-outlet>` :   
-slot in HTML, shows what is active
-
----
-### app.routes.ts :-
+### <center> app.routes.ts
 ```ts
 export const routes = [ 
     { path: 'home', component: HomeComponent }
-    // ❌ Do NOT write /home
+    // ❌ Do NOT use /
 ];
 ```
 When this route matches, create this component and display it inside `<router-outlet>`
 
----
-```ts
-{ path: '', component: HomeComponent }
-```
-**Meaning**: URL is / , Nothing after the slash  
-This is not a redirect, It directly loads the component.
 
 ---
 > Route order REALLY matters
@@ -78,7 +62,7 @@ URL becomes /home,
 Then loads HomeComponent
 
 ---
-### pathMatch: 'full' ?
+#### pathMatch: ' ' ?
 Angular can match routes in two ways:  
 1. 'prefix' (default)  
 `{ path: ' ', redirectTo: 'home' }`  
