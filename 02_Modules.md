@@ -1,47 +1,3 @@
-## Angular Modules (NgModules) ✅
-*   What is a Module
-*   `NgModule` Metadata
-*   AppModule
-*   Feature Modules
-*   Core Module
-*   Shared Module
-*   Lazy Loaded Modules
-*   When & Why Modules Exist
-
----
-
-
-# <CENTER> Module
-An Angular Module is:  
-A container that groups related components, directives, pipes, and services.
-
-If EVERYTHING lives in one place:  
-❌ files become messy
-❌ hard to maintain
-❌ slow loading
-
----
-
-#### What Does app.module.ts Contain?
-1. @NgModule: Decorator
-2. Declarations Box: Who belongs to me?  
-Components, Directives, Pipes
-3. Imports Box: To use features provided by the modules
-4. Provider Box: Which services are available app‑wide?
-5. Bootstrap Box: What starts first?
-```ts
-//app.module.ts
-
-@NgModule({ 
-  declarations: [ AppComponent ],
-  imports: [ FormsModule, CommonModule ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule {}
-```
-
----
 ## <center>Module-based vs Standalone
 
 #### 1. STANDALONE :-
@@ -52,10 +8,48 @@ export class AppModule {}
 
 ---
 #### 2. MODULE BASED :-
-![alt text](image-38.png)
-
+![alt text](image-43.png)
 
 ---
+
+# <CENTER> Module
+
+When Angular (older style) starts, the first thing it looks for is `app.module.ts`  
+
+A module is the main configuration file that tells Angular how your app is structured
+
+If EVERYTHING lives in one place:  
+❌ files become messy
+❌ hard to maintain
+❌ slow loading
+
+---
+
+#### What Does Module Contain?
+```ts
+@NgModule({
+  declarations: [],
+  imports: [],
+  providers: [],
+  bootstrap: []
+})
+export class AppModule {}
+```
+1. @NgModule:   
+This file is a module and here is its configuration
+2. Declarations Box:  
+List of components that belong to this module
+3. Imports Box:  
+List of other modules this module depends on
+4. Provider Box: Which services are available app‑wide?
+5. Bootstrap Box:  
+Defines the starting component of the application
+
+
+
+
+
+
 Earlier Angular versions, By default created a Module‑based project Now Stand-Alone.
 
 
@@ -117,3 +111,4 @@ export class AppComponent {
   name = '';
 }
 ```
+---
