@@ -302,7 +302,7 @@ Only filtering / sorting / searchin / extra options changes
     });
     ```
 
-**READING QUERY PARAMS :-**
+**READING QUERY PARAMS FROM URL :-**
 
 Step 1: Importing and injecting ActivatedRoute
 ```ts
@@ -310,14 +310,18 @@ import { ActivatedRoute } from '@angular/router';
 
 constructor(private route: ActivatedRoute) {}
 ```
-```ts
+
+For eg: `/home?name=ayush&age=25`
+
+Step 2 : Either
+  ```ts
 ngOnInit() {
   const N = this.route.snapshot.queryParamMap.get('name');
   const A = this.route.snapshot.queryParamMap.get('age');
 
   console.log(N, A);
 }
-```
+  ```
 
 ```ts
 ngOnInit() {

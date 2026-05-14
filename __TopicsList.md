@@ -3,7 +3,7 @@
 
 ## 0. Prerequisites (Foundation)
 
-### TypeSACcript Essentials for Angular
+### TypeScript Essentials for Angular
 
 *   Types, Interfaces & Type Aliases
 *   Functions & Arrow Functions
