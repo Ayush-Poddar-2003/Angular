@@ -1,3 +1,8 @@
+# <center> RxJs
+Reactive Extensions for JavaScript.  
+It is a library to handle asynchronous data streams
+
+---
 ### Asynchronous (takes time)
 Asynchronous = don’t wait, continue other work
  examples :-
@@ -13,8 +18,6 @@ Solutions :-
 2. Promises ✅ better
 3. Observables** ✅ powerful (Angular choice)
 
-
-
 ---
 ### <center> Observables ?
 A function/process that generates values and sends them
@@ -22,13 +25,8 @@ A function/process that generates values and sends them
 
 Observable = YouTube channel  
 It does NOT store videos for you ❌  
-It keeps producing/uploading videos ✅
+it PRODUCES values when subscribed ✅
 
-Observable can get values from:  
-API response, User typing, Button click, Timer, Live data (chat, stock price)
-
-So:
-Observable produces values using some source
 
 ```ts
 this.http.get('/api/users');  
@@ -41,112 +39,100 @@ console.log(users);
 //Wont work coz, API request has not completed
 ```
 
+#### Characteristics :-
+1. Lazy Execution: Observable does nothing until subscribed
+2. Multiple Values Over Time, Unlike Promises
+3. Can Emit 3 Types of Signals  
+Every Observable can send: next, error, complete
+4. Can be cancelled unlike promise.
+
+> When you see $ in Angular:   
+It usually means, This is an Observable
 ---
-
-### <center> Subscribe ?
-subscribe() is used to listen to an Observable and receive its data
-
+Syntax :
 ```ts
 import { Observable } from 'rxjs';
 
-const obs = new Observable((observer) => {
-  observer.next(1);
-  observer.next(2);
-  observer.next(3);
-  // next(value): send this value to subscriber  
+const obs$ = new Observable((observer) => {
+  // emit values here
 });
-```
-```js
-obs.subscribe((data) => {
-  console.log(data);
-});
-```
-Handles above `next( )` function.    
-Other functions :-  
-`complete( )`: No more values will come.  
-`error( )`: After error( )   Observable stops completely
 
-```js
-obs.subscribe({
-  next: (data) => console.log(data),
-  error: (err) => console.log(err),
-  complete: () => console.log("Done")
-});
+// Observable → creates the stream
+// observer → sends data out
 ```
-Handles:  
-`next( )`, `error( )`, `complete( )`
+---
+### Observer Methods :-
+
+1. **next(value)**  :     sends data
+    ```ts
+    observer.next('A');
+    ```
+    Can be called multiple times  
+    Represents values flowing in the stream
+
+2. **error(error)** : Sends error and stops execution
+    ```ts
+    observer.error('Something went wrong');
+    ```
+    After error( ) → stream ends  
+    No next( ) or complete( ) after this
+
+3. **complete()**: Marks stream as finished
+    ```ts
+    observer.complete();
+    ```
+    After complete() → nothing else runs    
+    Normal termination (no error)
+
+> next() goes to either error or complete not both
 
 ---
+### <center> Subscribe ?
+subscribe( ) is used to listen to an Observable and receive its data
 
-
-Until you subscribe:  
-❌ API call does NOT happen
-❌ No network request
-❌ No data
-    
-
-
----
-### Example :-
+For eg;-
 ```ts
-//User Service, we make request here
-import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-
-export class UserService {
-
-  constructor(private http: HttpClient) {}
-
-  getUsers() {
-    return this.http.get('API_URL');
-  }
-}
+const obs$ = new Observable((observer) => {
+  observer.next('A');
+  observer.next('B');
+  observer.complete();
+});
 ```
-Requesting from the component file
+When someone subscribes → I will:  
+send "A"  
+send "B"  
+then finish  
+
+
+```js
+obs$.subscribe({
+  next: (value) => console.log(value),
+  error: (err) => console.log('Error:', err),
+  complete: () => console.log('Done')
+});
+
+//output
+//A
+//B
+//Done
+```
+---
+
+### Subscription Object
+When we subscribe we get something back
 ```ts
-//home.component.ts
-import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
-
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html'
-})
-
-export class HomeComponent implements OnInit {
-
-  usersArr: any[] = [];
-
-  constructor(private us: UserService){} //child of service
-
-  ngOnInit() {
-    this.us.getUsers().subscribe((data) => {
-      this.usersArr = data;
-    });
-  }
-}
+const sub = obs$.subscribe(...);
+sub.unsubscribe();
 ```
 
----
 
-### <center> SUMMARY
-```
-Observable = future data stream
-HttpClient returns Observable
-subscribe() starts the request
-Data arrives inside subscribe
-Services return Observables
-Components subscribe
-```
+
 
 ---
----
+### Typing
 
-
-> API → subscribe → store in variable → HTML uses it
 ```ts
 data: any[] = [];
 

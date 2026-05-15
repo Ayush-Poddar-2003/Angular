@@ -86,11 +86,10 @@ process(() => {
 A Promise is an object that represents a value that will be available in the future.  
 Promise always represents future result
 
-| State | Meaning | 
-|------|------|
-Pending⏳| still waiting | 
-Resolved ✅ | success
-Rejected ❌ | error
+A Promise:  
+Handles one async value,  
+Executes immediately,   
+Cannot be cancelled once started
 
 ---
 ### <CENTER>RESOLVE -
