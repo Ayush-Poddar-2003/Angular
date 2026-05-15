@@ -18,36 +18,36 @@ It runs your component in phases, and lifecycle hooks let you:
 Special methods that Angular automatically calls at different stages of a component’s life.  
 You don’t call them → Angular calls them for you.
 
-
+Flow:-
 ```
-ngOnChanges()
-ngOnInit()
-ngDoCheck()
-ngAfterContentInit()
-ngAfterContentChecked()
-ngAfterViewInit()
-ngAfterViewChecked()
-ngOnDestroy()
+1. ngOnChanges()
+2. ngOnInit()
+3. ngDoCheck()
+4. ngAfterContentInit()
+5. ngAfterContentChecked()
+6. ngAfterViewInit()
+7. ngAfterViewChecked()
+8. ngOnDestroy()
 ```
 ---
 
-## ngOnChanges
-ngOnChanges() runs whenever data received via @Input() changes.  
+## 1. ngOnChanges
+Trigger: Runs whenever data from @Input() changes  
 Runs before ngOnInit() (first time)  
 Runs every time input value changes
 
-## ngOnInit
-Runs once, after the component is initialized and ready.  
+## 2. ngOnInit
+Trigger: Runs once, after component initialization  
 Safe place for: API calls, Initial data setup, Subscriptions
 
-## ngDoCheck (Custom Change Detection)
+## 3. ngDoCheck (Custom Change Detection)
 Angular automatically checks:  
 Has data changed?
 Should UI update?  
 Every time it checks → ngDoCheck() runs, multiple times, if consoled, multi logs
 
-## <center> ngAfterViewInit
-ngAfterViewInit() runs after the component’s view (HTML/UI) is fully loaded.  
+## 4. ngAfterViewInit
+Runs after the component’s view (HTML/UI) is fully loaded.  
 This means, After this hook:  
 ✅ UI is fully rendered  
 ✅ DOM elements can be accessed safely
@@ -78,6 +78,6 @@ Put cursor inside input box automatically.
 
 ---
 
-## <center> ngOnDestroy
-Runs right before a component gets removed from the screen.
-
+## 5. ngOnDestroy
+Runs right before a component gets removed from the screen.  
+For : Unsubscribing observables, Clearing timers, Avoiding memory leaks
