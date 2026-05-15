@@ -1,4 +1,4 @@
-## Loading States & UX
+# <center> Loading States & UX
 
 When you call an API:  
 👉 It takes time (1–3 seconds sometimes)
@@ -9,9 +9,8 @@ NOTHING happens on screen ->
 User thinks app is broken
 
 ---
-### Basic Loading State Concept :-
-Loading = “API request is in progress”
-
+### Loading State Concept :-
+Loading = “API request is in progress”  
 We use a boolean flag :-
 ```ts
 isLoading = false;

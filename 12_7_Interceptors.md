@@ -17,14 +17,10 @@ A global handler for all HTTP requests and responses
 
 ### What can Interceptors do?
 1. Modify Request: Add headers globally
-2. Handle Response: Transform data, Log response
-3. Handle Errors (GLOBAL ✅)  
-Catch 401 → redirect to login, 
-Catch 500 → show error
+2. Handle Response: Transform data
+3. Handle Errors: Globally   
 4. Logging / Debugging: 
-Print all requests automatically
-
-Runs for EVERY request : Get, Put, Post
+Print all requests/responses
 
 ---
 
@@ -86,3 +82,55 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 Why `clone( )`?  
 Request objects are immutable.
 > “Create a new request with modifications”
+
+---
+**We have Multiple Interceptors** :-  
+
+🔐 Auth Interceptor → adds token  
+📊 Logging Interceptor → logs requests  
+⚠️ Error Interceptor → handles errors  
+
+Usual order
+1. Auth Interceptor (adds token)
+2. Logging Interceptor (optional)
+3. Error Interceptor (handles errors)
+---
+
+![alt text](image-53.png)
+
+---
+### Implementation
+```ts
+provideHttpClient(
+  withInterceptors([
+    authInterceptor,
+    loggingInterceptor,
+    errorInterceptor
+  ])
+)
+```
+
+```ts
+// Logging
+export const loggingInterceptor: HttpInterceptorFn = (req, next) => {
+
+  console.log('Request sent:', req.url);
+
+  return next(req).pipe(
+    tap(() => console.log('Response received'))
+  );
+};
+```
+
+```ts
+//Error
+export const errorInterceptor: HttpInterceptorFn = (req, next) => {
+
+  return next(req).pipe(
+    catchError(err => {
+      console.log('Error:', err);
+      return throwError(() => err); //must return
+    })
+  );
+};
+```

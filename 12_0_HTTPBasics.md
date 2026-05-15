@@ -1,16 +1,15 @@
 # <CENTER> Introduction
 
-### CLIENT ?  
+### <center> CLIENT ?  
 Anything that requests for data / service.  
-Eg: Browser (Chrome), Mobile apps, Postman 
-
-**Client responsibilities :-**
+Eg: Browser (Chrome), Mobile apps, Postman  
+Client :-
 1. Send Requests
 2. Wait for Response & then use it
 
 ---
-### REQUEST ?
-Message sent by the client to the server asking for something like    
+### <center>REQUEST ?
+Message sent by the client, to the server, asking for something like    
 Load users, Submit form, Login, Delete item etc.
 
 A request has 4 main parts:
@@ -38,9 +37,8 @@ Only used in: POST, PUT, PATCH
 
 
 ---
-### SERVER ?
-Listens for requests and sends back responses.  
-**Server responsibilities** :-
+### <center>SERVER ?
+
 1. Listen for Requests
 2. Process Logic
 3. Interact with Database
@@ -58,7 +56,7 @@ Server does NOT remember past requests
 
 ---
 
-### RESPONSE ?
+### <center>RESPONSE ?
 Message sent by the server, back to the client, after processing a request
 
 **What response contains** ?
@@ -81,7 +79,7 @@ Errors may also return body (error message)
 
 ---
 
-### HTTP
+## <center> HTTP
 HyperText Transfer Protocol  
 Set of rules that define how a request and response should be formatted and exchanged.
 
@@ -95,6 +93,6 @@ Chaos ❌
 > HTTP is Stateless ie. No Memory
 
 **HTTP** : Not secure, Data visible  
-**HTTPS** (used everywhere) :
+**HTTPS** (used everywhere) :  
 Secure connection, 
 Data encrypted

@@ -1,6 +1,7 @@
 # HttpClient
 HttpClient is Angular’s built-in tool to send HTTP requests  
-Angular does NOT enable HTTP by default, You MUST import it.
+Angular does NOT enable HTTP by default, You 
+### 1. import it.
 
 For NgModules (older style) :-
 ```ts
@@ -25,8 +26,7 @@ providers: [
 ]
 ```
 ---
-### 2. Using in components :-  
-Import and inject
+### 2. Importing & Injecting in components :-  
 ```ts
 import { HttpClient } from '@angular/common/http';
 
@@ -44,9 +44,9 @@ this.http.get('https://jsonplaceholder.typicode.com/users')
   });
 ```
 ---
-### <center> OBSERVABLE
-`this.http.get('/users')` returns an observable
-Lifecycle -
+## <center> OBSERVABLE
+`this.http.get('/users')` returns an observable.  
+Lifecycle, After subscribing we have -
 1. next (Success)
 2. error (Failure)
 3. complete (Finished)
@@ -60,12 +60,11 @@ this.http.get('/users').subscribe({
 ```
 
 ---
+## <center> TYPE
 
 ```ts
-this.http.get<User[]>('/users')
+this.http.get<any[]>('/users')
 ```
-User[ ] = array of User objects  
-TypeScript now KNOWS structure
 
 ---
 ### <center> METHODS

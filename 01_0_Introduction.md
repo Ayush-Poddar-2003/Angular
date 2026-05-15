@@ -8,12 +8,14 @@ Originally called **AngularJS (Deprecated)**, currently **Angular (2+)**.
 > ⚠️ AngularJS and Angular (2+) are different frameworks.
 
 - Angular is not just a UI library like React. It is a full‑fledged framework.  
-- Angular gives a complete, opinionated structure for large-scale applications, unlike libraries where we assemble everything ourselves.
+**Library**: You are in charge. Your code calls the library's functions to perform specific tasks.  
+**Framework**: The framework is in charge. It provides a skeleton or blueprint, and it calls your code at specific "hooks" to fill in the functionality
+
 
 ---
 ### AngularJS(1.x) (Old)  Architecture : MVC
 1. **MODEL**  
-Data + Business Logic — what data we have, how we handle it.
+Data + Business Logic, what data we have, how we handle it.
 
 2. **VIEW**  
 UI — The screen user sees.
@@ -102,21 +104,13 @@ Each page = separate HTML file
 Full page reload every time
 
 SPA :-  
-The browser loads only ONE HTML file  
-Then JavaScript updates the screen dynamically  
-In Angular (SPA):
-
+The browser loads only ONE HTML file,  
 URL change = Angular decides which component to show
-That’s why Angular has:
-Router,
-router-outlet,
-Route configuration
->  Routing is component switching
 
 ---
 # <CENTER> BOOTSTRAPPING
 
-Bootstrapping means: How Angular app starts running in the browser
+How Angular app starts running in the browser
 
     http://localhost:4200
             |           

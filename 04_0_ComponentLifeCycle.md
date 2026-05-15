@@ -1,5 +1,6 @@
 # Component Life Cycle
-The sequence of stages a component goes through from creation → updates → destruction.
+The sequence of stages a component goes through from  
+creation → updates → destruction.
 
 A component is like an app screen:
 
@@ -30,14 +31,14 @@ ngOnDestroy()
 ```
 ---
 
-## ngOnInit
-Runs once, after the component is initialized and ready.  
-Safe place for: API calls, Initial data setup, Subscriptions
-
 ## ngOnChanges
 ngOnChanges() runs whenever data received via @Input() changes.  
 Runs before ngOnInit() (first time)  
 Runs every time input value changes
+
+## ngOnInit
+Runs once, after the component is initialized and ready.  
+Safe place for: API calls, Initial data setup, Subscriptions
 
 ## ngDoCheck (Custom Change Detection)
 Angular automatically checks:  

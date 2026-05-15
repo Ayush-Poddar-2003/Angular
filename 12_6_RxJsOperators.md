@@ -1,4 +1,4 @@
-### Why Operators Exist ?
+# Operators ?
 `this.http.get('/users').subscribe(...)`
 
 What if you want to:  
@@ -15,9 +15,7 @@ Observable → pipe(operators) → subscribe()
 pipe() is where you apply operators  
 `Raw response → pipe → processed response → subscribe`
 ```ts
-this.http.get('/users').pipe(
-  map(data => data)
-).subscribe();
+this.http.get('/users').pipe(operator).subscribe();
 ```
 
 ---

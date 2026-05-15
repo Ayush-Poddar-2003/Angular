@@ -41,7 +41,6 @@ How JavaScript Executes Code ?
 4. All async tasks start when JS reaches them, They DO NOT wait for each other, They run independently, Output depends on completion time
 
 ---
----
 # <center> CALLBACKS
 Callbacks are the foundation of async programming in JavaScript.  
 Everything evolved like this:

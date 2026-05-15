@@ -85,16 +85,11 @@ Until you subscribe:
 ❌ No data
     
 
-What happens when you subscribe?
-1. Starts HTTP request
-2. Waits for server response
-3. When data arrives → calls your function
-4. Passes the data inside data
+
 ---
 ### Example :-
 ```ts
-//User Service
-import { Injectable } from '@angular/core';
+//User Service, we make request here
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -102,6 +97,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class UserService {
+
   constructor(private http: HttpClient) {}
 
   getUsers() {
@@ -109,7 +105,7 @@ export class UserService {
   }
 }
 ```
-Using the API in a COMPONENT
+Requesting from the component file
 ```ts
 //home.component.ts
 import { Component, OnInit } from '@angular/core';

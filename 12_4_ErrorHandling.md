@@ -14,7 +14,7 @@ this.http.get('/users').subscribe({
 });
 ```
 
-### Error Object :-
+### Error Object: err :-
 ```ts
 error: (err) => {
   console.log(err.status);   // 404, 500 etc.
@@ -43,5 +43,5 @@ this.http.get('/users').subscribe({
 ```
 
 ---
-### Using RxJS catchError
+### Using RxJS catchError**
 Instead of handling error inside subscribe:

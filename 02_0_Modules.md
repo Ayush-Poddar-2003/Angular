@@ -1,4 +1,4 @@
-## <center>Module-based vs Standalone
+## <center>Project Types
 
 #### 1. STANDALONE :-
 ![alt text](image-37.png)
@@ -12,16 +12,12 @@
 
 ---
 
-# <CENTER> Module
+# <CENTER> Module ?
 
 When Angular (older style) starts, the first thing it looks for is `app.module.ts`  
 
 A module is the main configuration file that tells Angular how your app is structured
 
-If EVERYTHING lives in one place:  
-❌ files become messy
-❌ hard to maintain
-❌ slow loading
 
 ---
 

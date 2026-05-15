@@ -1,6 +1,5 @@
 ## Angular Complete Study Index
 
-
 ## 0. Prerequisites (Foundation)
 
 ### TypeScript Essentials for Angular

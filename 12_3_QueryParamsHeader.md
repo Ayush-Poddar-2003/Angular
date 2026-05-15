@@ -2,6 +2,7 @@
 Extra data added to URL to modify the request.  
 
 `/users?page=1&limit=10`
+
 ![alt text](image-50.png)
 
 ---
@@ -44,14 +45,13 @@ this.http.get('/users', {
   }
 }).subscribe();
 ```
-Method 2 (Using HttpHeaders, More Structured Way):-
+Method 2 : (Using HttpHeaders, More Structured Way):-
 ```ts
 import { HttpHeaders } from '@angular/common/http';
 
-const headers = new HttpHeaders()
-  .set('Authorization', 'Bearer token123');
+const h = new HttpHeaders().set( 'Authorization', 'Bearer token123');
 
-this.http.get('/users', { headers }).subscribe();
+this.http.get('/users', {h}).subscribe();
 ```
 
 ![alt text](image-51.png)
