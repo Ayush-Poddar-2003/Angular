@@ -5,7 +5,7 @@ A class to store reusable logic/data that multiple components can use.
 Imagine you have 3 components:  
 - HomeComponent, DashboardComponent, ProfileComponent    
 
-All three need **UserData** from an API.
+All three need **User's Data** from an API.
 ```
 HomeComponent → API
 DashboardComponent → API

@@ -30,8 +30,9 @@ The browser never reloads the page again
 
 >   Angular routing works entirely on the client side after initial load
 
----
 
+
+---
 ## <center> Core Pieces
 ### (1) Routes (Configuration)
 Defines mapping in app.routes.ts :-
@@ -42,6 +43,18 @@ Defines mapping in app.routes.ts :-
 When route matches:
 Angular creates component instance &
 Inserts it inside `<router-outlet>...</router-outlet>`
+
+---
+
+```html
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+```
+Now AppComponent says:  
+Navbar always visible.  
+Middle section changes according to route.  
+Footer always visible.  
 
 ---
 

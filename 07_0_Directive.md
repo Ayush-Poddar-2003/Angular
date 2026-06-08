@@ -1,8 +1,8 @@
 # Directive
 
 A directive is a class that tells Angular how to modify/control DOM elements.  
-If Components -> build the UI,  
-Directives -> control how that UI behaves.
+
+If Components -> build the UI,  Directives -> control how that UI behaves.
 
 
 | Type                 | Purpose                     | Example              |
@@ -11,22 +11,6 @@ Directives -> control how that UI behaves.
 | Attribute Directive  | Changes style/behavior, Do not remove elements from DOM, Applied as attributes, No *, change how an element behaves, not whether it exists. | `ngClass`, `ngStyle`, `ngModel` |
 > We need to import **CommonModule** for almost every directive,  
 & **FormsModule** for ngModel
-```ts
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-@Component({
-  selector: 'app-example',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './example.component.html'
-})
-export class ExampleComponent {}
-```
-
-- Component Directives → What UI blocks exist
-- Structural Directives → Which HTML elements should exist
-- Attribute Directives → How existing elements should look or behave
 
 ---
 ### <center> *ngIf

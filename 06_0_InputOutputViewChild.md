@@ -5,12 +5,7 @@ Allows a parent component to send data to a child component.
 👉 Parent controls data  
 👉 Child receives & displays it
 
-```ts
-// SYNTAX
-import { Input } from '@angular/core';
 
-@Input() propertyName: type;
-```
 For eg
 ```html
 <!-- parent.html -->
@@ -34,12 +29,25 @@ To send data from child to parent
 //SYNTAX
 import { Output,EventEmitter } from '@angular/core';
 
-@Output() eventName = new EventEmitter<type>();
+@Output() 
+eventName = new EventEmitter();
 ```
 
+We can create custom event with custom names
 ![alt text](image-42.png)
 
+
 For eg
+```ts
+export class ChildComponent {
+
+  @Output() notify = new EventEmitter<string>(); //create new evernt name notify
+
+  sendData() {
+    this.notify.emit('Hello from Child'); //sends data
+  }
+}
+```
 ```html
 <!-- parent.html -->
 <app-child (notify)="handleMessage($event)"></app-child>
@@ -51,16 +59,6 @@ handleMessage(message: string) {
 }
 ```
 
-```ts
-export class ChildComponent {
-
-  @Output() notify = new EventEmitter<string>(); //create new evernt name notify
-
-  sendData() {
-    this.notify.emit('Hello from Child'); //sends data
-  }
-}
-```
 ---
 
 ## <center> TEMPLATE REFERENCE VARIBALE '#'
@@ -69,6 +67,7 @@ Template reference works ONLY inside HTML, You cannot directly access it in TS
 ```HTML
 <input #inputBox>
 <button (click)="Fun(inputBox.value)"> Print </button>
+<!-- Sending parameter -->
 ```
 ```ts
 Fun(value: string) {

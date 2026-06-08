@@ -48,7 +48,7 @@ It will run on
 TO SEE ALL ng commands `ng help`  
 
 ---
-## ANGULAR CLI
+## <center>ANGULAR CLI 
 > Command Line Interface for Angular.
 
 Tool that helps developers  
@@ -56,12 +56,9 @@ Create, build, test, and deploy angular applications.
 
 
 **WHY WE NEED IT ?**  
-Angular projects have:
-- Strict structure
-- Multiple config files
-- TypeScript setup
-- Build configuration
-- CLI automates all that.
+Angular projects have:  
+Strict structure, Multiple config files, TypeScript setup, Build configuration  
+CLI automates all that.
 
 Without CLI → setup would take 1–2 hours manually.  
 With CLI → 1 command.
@@ -69,30 +66,10 @@ With CLI → 1 command.
 ---
 ### FILE & FOLDER STRUCTURE :-  
 
-Root Level :-
-
-![alt text](image-34.png)
-
-- .vscode : VS Code settings for this project only.  
-- node_modules : All installed dependencies.
-- public : Static assets.
-- src: Inside src:
-    - main.ts → Entry point (bootstraps Angular app)
-    - index.html → Main HTML file
-    - styles.css → Global styles
-    - app → Your real application code
-- .editorconfig : Controls indentation rules
-- .prettierrc : Formatting rules (Prettier).
-- angular.json : Angular project configuration.
-- package.json : Project metadata, scripts, and dependencies.
-- tsconfig.app.json : TypeScript config specifically for app files.
-- tsconfig.json : TypeScript configuration. 
-- tsconfig.spec.json : TypeScript config for test files.             
-
 
 ---
 
-# <center> SPA vs MPA
+## <center> SPA vs MPA
 How MPA works
 
 1. User clicks a link
@@ -108,23 +85,86 @@ The browser loads only ONE HTML file,
 URL change = Angular decides which component to show
 
 ---
-# <CENTER> BOOTSTRAPPING
+## <CENTER> BOOTSTRAPPING
 
-How Angular app starts running in the browser
+Old Angular (NgModules)
+```ts
+@NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent] 
+  // When Angular starts, load AppComponent first.
+})
+export class AppModule {}
+```
 
-    http://localhost:4200
-            |           
-            v
-       index.html
-            |
-            v
-    <app-root></app-root>
-    // At first: <app-root> is empty  
-    Browser does NOT know what it is
-            |
-            v
-         main.ts
-            |
-            v
-    bootstrapApplication(AppComponent)
-    //Angular, start my app using AppComponent
+This initial startup process is called bootstrapping.
+
+---
+## <center> main.ts
+```ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { appConfig } from './app/app.config';
+import { AppComponent } from './app/app.component';
+
+bootstrapApplication(
+  AppComponent,
+  appConfig
+);
+```
+
+# <center> PROJECT START
+
+## 1. Older style
+`ng new my-app`
+```
+src/
+│
+├── index.html
+├── main.ts
+│
+└── app/
+    ├── app.module.ts
+    ├── app.component.ts
+    ├── app.component.html
+    └── app.component.css
+```
+
+1. ng serve
+2. Browser Opens `index.html`
+    ```html
+    <body>
+        <app-root></app-root>
+    </body>
+    ```
+    But browser doesn't know what that tag is, So it waits.
+3. `main.ts` Executes
+    ```ts
+    platformBrowserDynamic().bootstrapModule(AppModule)
+    ```
+4. Angular Loads `AppModule`
+    ```ts
+    @NgModule({
+        declarations: [ AppComponent ],
+        imports: [ BrowserModule ],
+        bootstrap: [ AppComponent ]
+    })
+    export class AppModule {}
+    ```
+    4.1) `declarations: [ AppComponent, NavbarComponent, ... ]`  
+        Angular, these are the components I know about   
+    4.2) `imports: [
+  BrowserModule,
+  FormsModule,
+  HttpClientModule
+]`  
+Bring external functionality.  
+    4.3) `bootstrap: [ AppComponent ]`  
+    Start application with AppComponent.
+
+5. Angular Creates AppComponent
+    ```ts
+    @Component({
+        selector:'app-root'
+    })
+    ```
+6. Angular Loads AppComponent HTML
