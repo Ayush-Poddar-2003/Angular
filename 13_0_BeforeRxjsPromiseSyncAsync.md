@@ -32,6 +32,12 @@ console.log("End");
 
 > JavaScript executes synchronous code first, then async code later
 
+If JavaScript waited for these tasks, the page would freeze.
+
+The `setTimeout()` method schedules a function to run after a delay in milliseconds.
+It is an async operation used to delay code execution without freezing the browser.
+
+
 ---
 
 How JavaScript Executes Code ?
@@ -47,6 +53,9 @@ Everything evolved like this:
 Callback → Promise → RxJS
 
 > A callback is a function that is passed into another function and executed later.
+
+The callback function is intended to be executed later, typically when a specific event occurs or an asynchronous operation completes.  
+This is how many older JavaScript APIs worked.
 
 ```js
 function main(callback) {
@@ -95,8 +104,12 @@ Cannot be cancelled once started
 ### <CENTER>RESOLVE -
 Syntax:-
 ```js
-new Promise((resolve, reject) => {
-  resolve(value);
+let myPromise = new Promise(function(resolve, reject) {
+
+// Code that may take some time
+
+  resolve(value); // when successful
+  reject(value);  // when error
 });
 ```
 
@@ -109,13 +122,10 @@ reject = failure function
 Task finished successfully, here is value, It goes to .then()
 
 ```js
-const p = new Promise((resolve) => {
-  resolve("Done");
-});
-
-p.then((data) => {
-  console.log(data);
-});
+myPromise.then(
+  function(value) { /* code if success */ },
+  function(value) { /* code if error */ }
+);
 ```
 
 `.then((data) => { ... })`  

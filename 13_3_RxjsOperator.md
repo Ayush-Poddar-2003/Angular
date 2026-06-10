@@ -23,7 +23,7 @@ SYNTAX :-
 observable$
   .pipe(
     operator1(),
-    operator2()
+    operator2().... and other operators u want to use
   )
   .subscribe(...)
 ```

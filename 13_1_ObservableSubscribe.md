@@ -42,8 +42,7 @@ console.log(users);
 #### Characteristics :-
 1. Lazy Execution: Observable does nothing until subscribed
 2. Multiple Values Over Time, Unlike Promises
-3. Can Emit 3 Types of Signals  
-Every Observable can send: next, error, complete
+3. Can Emit 3 Types of Signals : next, error, complete
 4. Can be cancelled unlike promise.
 
 > When you see $ in Angular:   
@@ -131,7 +130,7 @@ sub.unsubscribe();
 
 
 ---
-### Typing
+### Type
 
 ```ts
 data: any[] = [];

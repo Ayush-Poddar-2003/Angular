@@ -45,5 +45,7 @@ this.http.get('/users').pipe(
       take(3)      // retry 3 times
     )
   )
-).subscribe();
+).subscribe(.....
+  .....
+);
 ```
