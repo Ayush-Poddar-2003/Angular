@@ -6,7 +6,6 @@
 👉 Uses ngModel  
 
 ### 2️⃣ REACTIVE FORMS
-
 👉 More control  
 👉 Logic in TypeScript  
 👉 Uses FormGroup, FormControl
@@ -14,7 +13,6 @@
 ---
 
 
----
 ### <center> 1️⃣ ngForm (Form Object)
 
 ```html
@@ -49,7 +47,7 @@ Angular prevents reload, Calls your function, Sends full form data
 
 For e.g.  
 ```html
-<form #sellerSignup="ngForm" (ngSubmit)="signUp(sellerSignup.value)">
+<form #var="ngForm" (ngSubmit)="signUp(var.value)">
   <input type="text" ngModel name="name">
   <input type="password" ngModel name="password">
   <input type="text" ngModel name="email">
@@ -58,14 +56,14 @@ For e.g.
 ```
 Angular automatically builds this object for you:
 
-```ts
-sellerSignup.value = {
+```json
+var.value = {
   name: "whatever user typed",
   password: "whatever user typed",
   email: "whatever user typed"
 }
 //then
-(ngSubmit)="signUp(sellerSignup.value)"
+(ngSubmit)="signUp(var.value)"
 //You directly pass all form data as an object
 ```
 ---
@@ -107,82 +105,3 @@ nameRef.touched
 
 
 
----
-## Reactive
-When complexity is there 
-
-![alt text](image-21.png)
-```html
-<form>
-
-  <input type="text" placeholder="Enter Name" [formControl]="userName"> <!--linking variable-->
-
-  <input type="text" placeholder="Enter password" [formControl]="userPass">
-
-  <button type="button" (click)="displayValue()" >Display Data</button>
-
-  <h2>{{userName.value}}</h2>
-  <h2>{{userPass.value}}</h2>
-</form>
-
-```
-```ts
-export class App {
-  userName = new FormControl(); //to link with form
-  userPass = new FormControl();
-
-  displayValue(){
-    console.log(this.userName.value, this.userPass.value)
-  }
-}
-```
-
-
----
-
-### <center>Form Grouping
-
-![alt text](image-22.png)
-
-```html
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-
-  <input type="text" placeholder="Enter name" formControlName="UName">
-
-  <input type="text" placeholder="Enter password" formControlName="UPass">
-
-  <input type="text" placeholder="Enter email" formControlName="UEmail">
-
-  <button>Submit</button>
-
-  <button type="button" (click)="setValue()" >Set Value</button>
-
-</form>
-```
-
-```ts
-export class App {
-  
-profileForm = new FormGroup(
-  {
-    UName:new FormControl("Deafult"),
-    UPass:new FormControl("DefPass"),
-    UEmail:new FormControl("DefMail"),
-  }
-)
-
-onSubmit(){
-  console.log(this.profileForm.value);
-}
-
-setValue(){
-  this.profileForm.setValue({
-    UName:"Ayush",
-    UPass:"123#",
-    UEmail:"ayush@mail.com"
-  })
-}
-
-}
-
-```

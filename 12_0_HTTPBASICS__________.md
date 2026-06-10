@@ -1,16 +1,12 @@
 # <CENTER> Introduction
 
-### <center> CLIENT ?  
-Anything that requests for data / service.  
-Eg: Browser (Chrome), Mobile apps, Postman  
-Client :-
-1. Send Requests
-2. Wait for Response & then use it
+### CLIENT ?  
+Anything that -
+Send Requests, Wait for Response & then use it
 
 ---
-### <center>REQUEST ?
-Message sent by the client, to the server, asking for something like    
-Load users, Submit form, Login, Delete item etc.
+### REQUEST ?
+Message sent by the client, to the server, asking for something.
 
 A request has 4 main parts:
 1. **Method (What action?)**  

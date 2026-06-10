@@ -5,7 +5,7 @@ Released in **2010 (AngularJS)** by Google
 Created by **Misko Hevery and Adam Abrons**  
 Originally called **AngularJS (Deprecated)**, currently **Angular (2+)**.
 
-> ⚠️ AngularJS and Angular (2+) are different frameworks.
+> ⚠️ AngularJS and Angular are different frameworks.
 
 - Angular is not just a UI library like React. It is a full‑fledged framework.  
 **Library**: You are in charge. Your code calls the library's functions to perform specific tasks.  
@@ -13,18 +13,22 @@ Originally called **AngularJS (Deprecated)**, currently **Angular (2+)**.
 
 
 ---
-### AngularJS(1.x) (Old)  Architecture : MVC
-1. **MODEL**  
-Data + Business Logic, what data we have, how we handle it.
+### ARCHITECTURE ?
 
-2. **VIEW**  
-UI — The screen user sees.
+**AngularJS (1.x) : MVC**
+1. **MODEL** : Data + Business Logic, what data we have, how we handle it.
+2. **VIEW**  : UI, The screen user sees.
+3. **CONTROLLER**  : Middleman, connects View ↔ Model.
 
-3. **CONTROLLER**  
-Middleman — connects View ↔ Model.
-
-### Angular (2+) Architecture : Component-Based  
+**Angular (2+)** :  
 It uses **Components + Services + Dependency Injection**.
+
+
+### Angular Versions
+- AngularJS → Version 1.x (deprecated)
+- Angular → Version 2+ (complete rewrite)
+- Angular 16+ → Includes Signals (modern)
+
 
 ---
 ### INSTALLATION ?
@@ -85,36 +89,11 @@ The browser loads only ONE HTML file,
 URL change = Angular decides which component to show
 
 ---
-## <CENTER> BOOTSTRAPPING
 
-Old Angular (NgModules)
-```ts
-@NgModule({
-  declarations: [AppComponent],
-  bootstrap: [AppComponent] 
-  // When Angular starts, load AppComponent first.
-})
-export class AppModule {}
-```
 
-This initial startup process is called bootstrapping.
+## <center> HOW PROJECT STARTS
 
----
-## <center> main.ts
-```ts
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
-
-bootstrapApplication(
-  AppComponent,
-  appConfig
-);
-```
-
-# <center> PROJECT START
-
-## 1. Older style
+### Older style :-
 `ng new my-app`
 ```
 src/
@@ -136,7 +115,7 @@ src/
         <app-root></app-root>
     </body>
     ```
-    But browser doesn't know what that tag is, So it waits.
+    But browser doesn't know what that tag app-root is, So it waits.
 3. `main.ts` Executes
     ```ts
     platformBrowserDynamic().bootstrapModule(AppModule)
@@ -168,3 +147,21 @@ Bring external functionality.
     })
     ```
 6. Angular Loads AppComponent HTML
+
+---
+### Newer Style :-
+```ts
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+
+import { AppComponent } from './app/app.component';
+import { routes } from './app/app.routes';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient()
+  ]
+}).catch(err => console.error(err));
+```

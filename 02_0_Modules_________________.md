@@ -1,4 +1,4 @@
-## <center>Project Types
+## <center>Angular Project Types
 
 #### 1. STANDALONE :-
 ![alt text](image-37.png)
@@ -14,9 +14,10 @@
 
 # <CENTER> Module ?
 
-When Angular (older style) starts, the first thing it looks for is `app.module.ts`  
+When Angular (older style) starts, main.ts loads `app.module.ts`  
 
-A module is the main configuration file that tells Angular how your app is structured
+A Module (NgModule) is a class that groups related components,
+directives, pipes, and services into a single unit. It helps Angular organize and manage application features.
 
 
 ---
@@ -26,7 +27,8 @@ A module is the main configuration file that tells Angular how your app is struc
 @NgModule({
   declarations: [],
   imports: [],
-  providers: [],
+  providers: [], //Register services (DI), but now use @injectable
+  exports: [],
   bootstrap: []
 })
 export class AppModule {}
@@ -48,30 +50,13 @@ In Module‑Based Angular, You must:
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     FormsModule   // 👈 needed for ngModel
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
 ```
-
-```ts
-// demo.component.ts
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
-})
-export class AppComponent {
-  name = '';
-}
-```
-```html
-<!-- demo.component.html -->
-<input [(ngModel)]="name" />
-<p *ngIf="name">Hello {{ name }}</p>
-```
-> Works only because: FormsModule was added in app.module.ts
 
 ---
 ## <center>In Standalone
@@ -90,4 +75,3 @@ export class AppComponent {
   name = '';
 }
 ```
----
