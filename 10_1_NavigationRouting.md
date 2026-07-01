@@ -87,3 +87,73 @@ this.router.navigate(['profile'], {
 ```
 
 ---
+## <center> Navigation Object
+
+When
+```ts
+this.router.navigate(
+  ['home/reports/lifeTime']
+);
+```
+
+Angular internally creates a navigation object
+
+```ts
+{
+    id: 25,
+    initialUrl: '/home/reports/lifeTime',
+    finalUrl: '/home/reports/lifeTime',
+    trigger: 'imperative',
+    extras: {
+        state: undefined
+    }
+}
+```
+Now inside Component, if you do: `console.log(this.router.getCurrentNavigation());`  
+you'll get that object.
+
+Other Example -
+```ts
+this.router.navigate(
+  ['home/reports/lifeTime'],
+  {
+      state: {
+          username: 'Ayush',
+          age: 23
+      }
+  }
+);
+```
+```ts
+{
+    id: 26,
+    initialUrl: '/home/reports/lifeTime',
+    finalUrl: '/home/reports/lifeTime',
+
+    extras: {
+
+        state: {
+            username: 'Ayush',
+            age: 23
+        }
+    }
+}
+```
+> this.router.getCurrentNavigation() : returns current object
+
+`this.router.getCurrentNavigation()?.extras`
+```ts
+{
+    state: {
+        username: 'Ayush',
+        age: 23
+    }
+}
+```
+`this.router.getCurrentNavigation()?.extras?.state`
+```ts
+{
+    username: 'Ayush',
+    age: 23
+}
+```

@@ -34,17 +34,18 @@ The browser never reloads the page again
 
 ---
 ## <center> Core Pieces
-### (1) Routes (Configuration)
+#### (1) Routes (Configuration)
 Defines mapping in app.routes.ts :-
 
 
-### (2) Router Outlet (Display Area)
+#### (2) Router Outlet (Display Area)
 👉 Where content shows  
 When route matches:
 Angular creates component instance &
 Inserts it inside `<router-outlet>...</router-outlet>`
 
 ---
+## <center> Structure
 
 ```html
 <app-navbar></app-navbar>
@@ -52,16 +53,14 @@ Inserts it inside `<router-outlet>...</router-outlet>`
 <app-footer></app-footer>
 ```
 Now AppComponent says:  
-Navbar always visible.  
-Middle section changes according to route.  
-Footer always visible.  
+- Navbar always visible.  
+- Middle section changes according to route.  
+- Footer always visible.  
 
 ---
 
 ## <CENTER> Route Configuration
 
-An array of objects that defines:  
-URL path → What should happen
 
 ```ts
 const routes: Routes = [
