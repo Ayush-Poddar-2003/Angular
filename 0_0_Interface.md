@@ -23,8 +23,8 @@ getUsers(){
 }
 ```
 
-Sometimes properties are not mandatory.
-Use ?
+Sometimes properties are not mandatory.  
+Use `?`
 
 ```ts
 interface User {

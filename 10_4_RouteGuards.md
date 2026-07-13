@@ -50,3 +50,11 @@ canActivate(): boolean {
   return role === 'ADMIN';
 }
 ```
+
+```
+Auth Guard
+     ↓
+AuthService
+     ↓
+isLoggedIn()
+```

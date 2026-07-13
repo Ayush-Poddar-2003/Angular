@@ -67,9 +67,6 @@ CLI automates all that.
 Without CLI → setup would take 1–2 hours manually.  
 With CLI → 1 command.
 
----
-### FILE & FOLDER STRUCTURE :-  
-
 
 ---
 
