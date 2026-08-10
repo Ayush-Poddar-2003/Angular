@@ -8,5 +8,5 @@ Angular -> Angular Material
 https://material.angular.dev/
 
 ### Installation -
-ng add @angular/material
+    ng add @angular/material
 
