@@ -1,1055 +1,450 @@
 
-# <center> 0. Foundation Prerequisites
+## 01. Angular Fundamentals
 
-## 0.1 JavaScript (ES6+)
-
-Variables & Scope
-- var
-- let
-- const
-- Hoisting
-- Scope
-- Closures
-
-Functions
-- Function Declarations
-- Function Expressions
-- Arrow Functions
-- Callback Functions
-- Higher Order Functions
-
-### Arrays & Objects
-- Destructuring
-- Spread Operator
-- Rest Operator
-- Object Shorthand
-- Optional Chaining
-- Nullish Coalescing
-
-### Array Methods
-- map()
-- filter()
-- reduce()
-- find()
-- some()
-- every()
-- sort()
-
-### Asynchronous JavaScript
-- Callbacks
-- Promises
-- Promise Chaining
-- Promise.all()
-- Async/Await
-- Event Loop
-- Call Stack
-- Microtasks vs Macrotasks
+* 1.1 What Angular Is
+* 1.2 Angular Application Architecture
+* 1.3 Angular CLI
+* 1.4 Angular Project Structure
+* 1.5 `angular.json`
+* 1.6 `package.json`
+* 1.7 `tsconfig.json`
+* 1.8 Development vs Production Build
+* 1.9 Angular Bootstrap Process
+* 1.10 Angular Compiler — Basic Understanding
 
 ---
 
-## 0.2 TypeScript Essentials
+## 02. Components & Lifecycle
 
-### Type System
-- string
-- number
-- boolean
-- any
-- unknown
-- never
-- void
-
-### Advanced Types
-- Union Types
-- Intersection Types
-- Literal Types
-
-### Interfaces & Types
-- Interfaces
-- Type Aliases
-- Interface Extension
-
-### Functions
-- Optional Parameters
-- Default Parameters
-- Function Types
-
-### Classes
-- Constructors
-- Methods
-- Properties
-
-### Access Modifiers
-- public
-- private
-- protected
-- readonly
-
-### Object-Oriented Programming
-- Inheritance
-- Polymorphism
-- Encapsulation
-- Abstraction
-
-### Advanced OOP
-- Abstract Classes
-- Static Members
-
-### Generics
-- Generic Functions
-- Generic Interfaces
-- Generic Classes
-
-### Enums
-
-### Decorators
-- Class Decorators
-- Property Decorators
-- Method Decorators
-- Parameter Decorators
-
-### Utility Types
-- Partial
-- Pick
-- Omit
-- Readonly
-- Record
-- Required
-
-### Type Safety
-- Type Narrowing
-- Type Guards
-- Optional Chaining
-- Nullish Coalescing
+* 2.1 What Is a Component?
+* 2.2 `@Component`
+* 2.3 Component Metadata
+* 2.4 Component Selector
+* 2.5 Component Template
+* 2.6 Component Styles
+* 2.7 Component Tree
+* 2.8 Component Lifecycle
+* 2.9 `ngOnChanges`
+* 2.10 `ngOnInit`
+* 2.11 `ngDoCheck`
+* 2.12 `ngAfterContentInit`
+* 2.13 `ngAfterContentChecked`
+* 2.14 `ngAfterViewInit`
+* 2.15 `ngAfterViewChecked`
+* 2.16 `ngOnDestroy`
+* 2.17 Lifecycle Execution Order
 
 ---
 
-# <center>1. Angular Introduction & Architecture
+## 03. Templates & Data Binding
 
-## Angular Basics
-- What is Angular
-- Why Angular
-- Angular vs React
-- Angular vs Vue
-- SPA vs MPA
-
-## Angular Ecosystem
-- Angular CLI
-- Angular DevTools
-- Angular Version History
-
-## Angular Application Structure
-- Root Files
-- src Folder
-- assets Folder
-- environments
-- angular.json
-- package.json
-- tsconfig.json
-
-## Angular Application Lifecycle
-- Application Startup Process
-- Angular Compilation Process
-
-## Bootstrapping
-- main.ts
-- bootstrapApplication()
-- Bootstrapping Flow
+* 3.1 Angular Templates
+* 3.2 Interpolation
+* 3.3 Property Binding
+* 3.4 Attribute Binding
+* 3.5 Event Binding
+* 3.6 Two-Way Binding
+* 3.7 Template Expressions
+* 3.8 Template Reference Variables
+* 3.9 `$event`
+* 3.10 Property Binding vs Attribute Binding
+* 3.11 Template Expression Rules
 
 ---
 
-# <center>2. Angular Modules (NgModules)
+## 04. Directives
 
-## Module Fundamentals
-- What is a Module
-- Why Modules Exist
-- NgModule Metadata
-
-## Types of Modules
-- AppModule
-- Feature Module
-- Shared Module
-- Core Module
-
-## Module Organization
-- Module Responsibilities
-- Module Communication
-
-## Lazy Loaded Modules
-
-## Best Practices
+* 4.1 What Are Directives?
+* 4.2 Component vs Directive
+* 4.3 Attribute Directives
+* 4.4 `ngClass`
+* 4.5 `ngStyle`
+* 4.6 Structural Directives
+* 4.7 `*ngIf`
+* 4.8 `*ngFor`
+* 4.9 `ngSwitch`
+* 4.10 `ng-template`
+* 4.11 Creating Custom Directives
+* 4.12 Directive Inputs
+* 4.13 `@HostListener`
+* 4.14 `@HostBinding`
 
 ---
 
-# 3. Components Fundamentals
+## 05. Pipes
 
-## Component Basics
-- What is a Component
-- Component Architecture
-- Component Metadata
-
-## Component Anatomy
-- Class
-- Template
-- Style
-
-## Selectors
-- Element Selector
-- Attribute Selector
-- Class Selector
-
-## Templates
-- Inline Templates
-- External Templates
-
-## Styling
-- Component Styles
-- Global Styles
-
-## View Encapsulation
-- Emulated
-- None
-- ShadowDom
+* 5.1 What Are Pipes?
+* 5.2 Built-in Pipes
+* 5.3 `date`
+* 5.4 `currency`
+* 5.5 `number`
+* 5.6 `percent`
+* 5.7 `uppercase` / `lowercase`
+* 5.8 `json`
+* 5.9 `async`
+* 5.10 Pipe Parameters
+* 5.11 Creating Custom Pipes
+* 5.12 Pure Pipes
+* 5.13 Impure Pipes
 
 ---
 
-# 4. Angular Templates Deep Dive
+## 06. Component Communication
 
-## Template Syntax
-- Expressions
-- Statements
-
-## Template Reference Variables
-
-## Safe Navigation Operator
-
-## Template Elements
-- ng-template
-- ng-container
-
-## Content Projection
-- ng-content
-- Single Slot Projection
-- Multi Slot Projection
-
-## Dynamic Templates
-- TemplateOutlet
+* 6.1 Parent → Child Communication
+* 6.2 `@Input`
+* 6.3 Input Changes
+* 6.4 Child → Parent Communication
+* 6.5 `@Output`
+* 6.6 `EventEmitter`
+* 6.7 Sibling Communication
+* 6.8 Communication Through Shared Services
+* 6.9 `@ViewChild`
+* 6.10 `@ViewChildren`
+* 6.11 `@ContentChild`
+* 6.12 `@ContentChildren`
 
 ---
 
-# 5. Component Lifecycle Hooks
+## 07. NgModules
 
-## Lifecycle Flow
-
-### Initialization
-- ngOnChanges
-- ngOnInit
-
-### Change Detection
-- ngDoCheck
-
-### Content Hooks
-- ngAfterContentInit
-- ngAfterContentChecked
-
-### View Hooks
-- ngAfterViewInit
-- ngAfterViewChecked
-
-### Cleanup
-- ngOnDestroy
-
-## Real World Use Cases
+* 7.1 Why NgModules Exist
+* 7.2 `@NgModule`
+* 7.3 `declarations`
+* 7.4 `imports`
+* 7.5 `exports`
+* 7.6 `providers`
+* 7.7 `bootstrap`
+* 7.8 `BrowserModule`
+* 7.9 `CommonModule`
+* 7.10 Shared Modules
+* 7.11 Core Modules
+* 7.12 Feature Modules
+* 7.13 Module Dependencies
+* 7.14 Lazy-loaded Modules
+* 7.15 Module Scope
 
 ---
 
-# 6. Data Binding & Template Syntax
+## 08. Dependency Injection
 
-## Interpolation
-
-## Property Binding
-
-## Attribute Binding
-
-## Class Binding
-
-## Style Binding
-
-## Event Binding
-
-## Event Object ($event)
-
-## Two-Way Binding
-- ngModel
-
-## Change Detection Basics
+* 8.1 Dependency Injection Concept
+* 8.2 Injector
+* 8.3 Providers
+* 8.4 Services in DI
+* 8.5 `providedIn`
+* 8.6 Constructor Injection
+* 8.7 Provider Scope
+* 8.8 Hierarchical Injectors
+* 8.9 `useClass`
+* 8.10 `useValue`
+* 8.11 `useFactory`
+* 8.12 `useExisting`
+* 8.13 Injection Tokens
+* 8.14 `@Inject`
 
 ---
 
-# 7. Component Communication
+## 09. Services
 
-## Parent to Child
-- @Input()
-
-## Child to Parent
-- @Output()
-- EventEmitter
-
-## Component References
-- ViewChild
-- ViewChildren
-
-## Content References
-- ContentChild
-- ContentChildren
-
-## Communication Patterns
-- Shared Services
-- State Sharing
+* 9.1 What Is a Service?
+* 9.2 Creating Services
+* 9.3 Service Responsibilities
+* 9.4 Component ↔ Service
+* 9.5 Service ↔ Service
+* 9.6 Shared Services
+* 9.7 State Through Services
+* 9.8 API Services
+* 9.9 Utility Services
+* 9.10 Service Architecture
+* 9.11 Singleton Services
 
 ---
 
-# 8. Directives
+# 10. RxJS Fundamentals
 
-## Structural Directives
-- *ngIf
-- *ngFor
-- *ngSwitch
-
-## Attribute Directives
-- ngClass
-- ngStyle
-
-## Custom Directives
-
-### Directive Creation
-
-### Host Interaction
-- HostListener
-- HostBinding
-
-## Real World Examples
+* 10.1 Why RxJS?
+* 10.2 Observable
+* 10.3 Observer
+* 10.4 Subscription
+* 10.5 `next`
+* 10.6 `error`
+* 10.7 `complete`
+* 10.8 Creating Observables
+* 10.9 Subscribing
+* 10.10 Unsubscribing
+* 10.11 Cold Observables
+* 10.12 Hot Observables
+* 10.13 Subject
+* 10.14 BehaviorSubject
+* 10.15 ReplaySubject
+* 10.16 Observable Execution
 
 ---
 
-# 9. Pipes
+# 11. RxJS Operators
 
-## Pipe Basics
-
-## Built-In Pipes
-- DatePipe
-- CurrencyPipe
-- PercentPipe
-- DecimalPipe
-- JsonPipe
-- SlicePipe
-- AsyncPipe
-
-## Pipe Chaining
-
-## Custom Pipes
-
-## Pure Pipes
-
-## Impure Pipes
-
----
-
-# 10. Services & Dependency Injection
-
-## Services
-- Why Services
-- Creating Services
-
-## Dependency Injection Basics
-- Constructor Injection
-- inject()
-
-## Providers
-
-### Provider Scope
-- Root
-- Module
-- Component
-
-## Singleton Services
-
-## Advanced Dependency Injection
-
-### Provider Types
-- useClass
-- useValue
-- useFactory
-- useExisting
-
-### Advanced Topics
-- Injector Hierarchy
-- InjectionToken
-- Environment Providers
+* 11.1 Operator Concept
+* 11.2 `map`
+* 11.3 `filter`
+* 11.4 `tap`
+* 11.5 `take`
+* 11.6 `takeUntil`
+* 11.7 `debounceTime`
+* 11.8 `distinctUntilChanged`
+* 11.9 `switchMap`
+* 11.10 `mergeMap`
+* 11.11 `concatMap`
+* 11.12 `exhaustMap`
+* 11.13 `catchError`
+* 11.14 `finalize`
+* 11.15 `startWith`
+* 11.16 `combineLatest`
+* 11.17 `forkJoin`
+* 11.18 `withLatestFrom`
+* 11.19 `shareReplay`
+* 11.20 Operator Chaining
+* 11.21 Subscription Management
+* 11.22 Common RxJS Mistakes
 
 ---
 
-# 11. Routing & Navigation
+# 12. HTTP & REST APIs
 
-## Routing Fundamentals
-- RouterModule
-- Routes
-
-## Router Outlet
-- router-outlet
-
-## Navigation
-- RouterLink
-- Router Navigate
-
-## Route Parameters
-- Route Params
-- Query Params
-
-## Child Routing
-
-## Lazy Loading
-
-## Route Guards
-- CanActivate
-- CanDeactivate
-- CanMatch
-- Resolve
-
-## Advanced Routing
-- Route Data
-- Named Outlets
-- Router Events
-- Breadcrumbs
-- Preloading Strategies
+* 12.1 `HttpClient`
+* 12.2 `HttpClientModule`
+* 12.3 GET Requests
+* 12.4 POST Requests
+* 12.5 PUT Requests
+* 12.6 PATCH Requests
+* 12.7 DELETE Requests
+* 12.8 Request Headers
+* 12.9 Query Parameters
+* 12.10 Route/API Parameters
+* 12.11 Request Body
+* 12.12 Typed Responses
+* 12.13 HTTP Status Codes
+* 12.14 HTTP Error Handling
+* 12.15 API Service Pattern
+* 12.16 CRUD API Integration
 
 ---
 
-# 12. Forms
+# 13. HTTP Interceptors
 
-## Template Driven Forms
-
-### Basics
-- ngForm
-- ngModel
-
-### Validation
-- Required
-- Min Length
-- Pattern
-
-### Custom Validation
+* 13.1 What Is an Interceptor?
+* 13.2 Request Interception
+* 13.3 Response Interception
+* 13.4 Modifying Requests
+* 13.5 Authentication Tokens
+* 13.6 Global Error Handling
+* 13.7 Loading Indicators
+* 13.8 Multiple Interceptors
+* 13.9 Interceptor Execution Order
 
 ---
 
-## Reactive Forms
+# 14. Forms
 
-### Form APIs
-- FormControl
-- FormGroup
-- FormBuilder
-
-### Validation
-- Built-In Validators
-- Custom Validators
-
-### Advanced Forms
-- FormArray
-- Nested FormGroup
-- Dynamic Forms
-- Dynamic Validators
-- Async Validators
-- Cross Field Validators
-
----
-
-# 13. RxJS & Observables
-
-## RxJS Fundamentals
-- Observable
-- Observer
-- Subscription
-
-## Observable vs Promise
-
-## Subscription Management
-- unsubscribe()
-- Memory Leak Prevention
-
-## Core Operators
-- map
-- tap
-- filter
-- debounceTime
-- catchError
-
-## Combination Operators
-- combineLatest
-- forkJoin
-- withLatestFrom
-
-## Utility Operators
-- distinctUntilChanged
-- startWith
-- takeUntil
-- finalize
-- shareReplay
-
-## Higher Order Mapping
-
-### switchMap
-
-### mergeMap
-
-### concatMap
-
-### exhaustMap
-
-## Subjects
-- Subject
-- BehaviorSubject
-- ReplaySubject
-- AsyncSubject
-
-## Advanced RxJS Patterns
-
-### State Management with RxJS
-
-### Caching with shareReplay
-
-### Debouncing API Calls
-
-### Cancellation Patterns
+* 14.1 Forms in Angular
+* 14.2 Template-driven Forms
+* 14.3 `ngModel`
+* 14.4 Form State
+* 14.5 Reactive Forms
+* 14.6 `FormControl`
+* 14.7 `FormGroup`
+* 14.8 `FormArray`
+* 14.9 Form Nesting
+* 14.10 Built-in Validators
+* 14.11 Custom Validators
+* 14.12 Async Validators
+* 14.13 `valueChanges`
+* 14.14 `statusChanges`
+* 14.15 Dynamic Forms
+* 14.16 Form Submission
+* 14.17 Form Error Handling
 
 ---
 
-# 14. HTTP & API Communication
+# 15. Routing
 
-## HttpClient
-
-## CRUD Operations
-- GET
-- POST
-- PUT
-- PATCH
-- DELETE
-
-## Request Configuration
-- Headers
-- Params
-
-## Error Handling
-
-## Retry Strategies
-
-## HTTP Interceptors
-
-### Authentication
-
-### Logging
-
-### Global Error Handling
-
-## API Layer Architecture
-- API Services
-- DTO Mapping
-- Adapter Pattern
-
-## Advanced HTTP
-- File Upload
-- File Download
-- Progress Events
-- Request Cancellation
-- API Caching
-
----
-
-# 15. Authentication & Authorization
-
-## Authentication Basics
-
-### Login Flow
-
-### Logout Flow
-
-## JWT Authentication
-
-### JWT Structure
-
-### Access Tokens
-
-### Refresh Tokens
-
-## Token Storage
-
-### LocalStorage
-
-### SessionStorage
-
-### Security Concerns
-
-## Route Protection
-- Auth Guards
-
-## Authorization
-- Role Based Access
-- Permission Based Access
-
-## Authentication Interceptors
+* 15.1 Angular Router
+* 15.2 Route Configuration
+* 15.3 `router-outlet`
+* 15.4 `routerLink`
+* 15.5 Route Parameters
+* 15.6 Query Parameters
+* 15.7 URL Fragments
+* 15.8 Programmatic Navigation
+* 15.9 Nested Routes
+* 15.10 Child Routes
+* 15.11 Route Redirects
+* 15.12 Wildcard Routes
+* 15.13 Lazy Loading
+* 15.14 Route Data
+* 15.15 Route Guards
+* 15.16 `CanActivate`
+* 15.17 `CanDeactivate`
+* 15.18 Route Resolvers
 
 ---
 
 # 16. Angular Material
 
-## Installation
-
-## Themes
-
-## Form Controls
-- Input
-- Select
-- Checkbox
-- Radio Button
-
-## Layout Components
-- Toolbar
-- Sidenav
-
-## Data Components
-- Table
-- Sort
-- Paginator
-
-## Dialogs
-- MatDialog
-
-## Notifications
-- MatSnackBar
-
-## Navigation
-- Menu
-- Tabs
-
-## Datepicker
-
-## Material Best Practices
+* 16.1 Angular Material Architecture
+* 16.2 Material Modules
+* 16.3 Buttons
+* 16.4 Inputs
+* 16.5 Select
+* 16.6 Checkbox
+* 16.7 Radio Buttons
+* 16.8 Tables
+* 16.9 Sorting
+* 16.10 Pagination
+* 16.11 Dialog
+* 16.12 Snackbar
+* 16.13 Tooltip
+* 16.14 Datepicker
+* 16.15 Expansion Panel
+* 16.16 Menus
+* 16.17 Material Forms
+* 16.18 Material Theming
+* 16.19 Customizing Material Components
 
 ---
 
-# 17. Standalone Angular APIs
+# 17. Angular Flex Layout
 
-## Standalone Components
-
-## Standalone Directives
-
-## Standalone Pipes
-
-## Standalone Routing
-
-## Dependency Injection
-
-## Bootstrapping Without NgModules
-
-## Migration from Modules
-
-## Modules vs Standalone
+* 17.1 Flex Layout Concept
+* 17.2 `fxLayout`
+* 17.3 `fxLayoutAlign`
+* 17.4 `fxFlex`
+* 17.5 `fxFlexOrder`
+* 17.6 `fxLayoutGap`
+* 17.7 Responsive Layout
+* 17.8 Breakpoints
+* 17.9 Responsive APIs
+* 17.10 Real-world Layout Patterns
 
 ---
 
-# 18. Angular Signals (Angular 16+)
+# 18. Change Detection
 
-## Signal Basics
-- signal()
-
-## Derived State
-- computed()
-
-## Side Effects
-- effect()
-
-## Signal Inputs
-
-## Model Inputs
-
-## Linked Signals
-
-## Signals in Components
-
-## Signals in Services
-
-## Signals vs RxJS
-
-## Best Practices
+* 18.1 What Is Change Detection?
+* 18.2 Angular Change Detection Cycle
+* 18.3 Default Change Detection
+* 18.4 `OnPush`
+* 18.5 Component Tree Checking
+* 18.6 Object References
+* 18.7 Events & Change Detection
+* 18.8 Observable & Async Pipe
+* 18.9 `ChangeDetectorRef`
+* 18.10 `detectChanges`
+* 18.11 `markForCheck`
+* 18.12 Zone.js — Basic Understanding
+* 18.13 Common Change Detection Problems
 
 ---
 
-# 19. State Management
+# 19. Advanced Angular
 
-## When State Management is Needed
-
-## Service Based State Management
-
-### BehaviorSubject Pattern
-
-### Facade Pattern
-
-## Component Store
-
-## NgRx Introduction
-
-### Store
-
-### Actions
-
-### Reducers
-
-### Effects
-
-### Selectors
-
-## Choosing a State Strategy
+* 19.1 Content Projection
+* 19.2 `ng-content`
+* 19.3 `ng-template`
+* 19.4 `TemplateRef`
+* 19.5 `ViewContainerRef`
+* 19.6 Embedded Views
+* 19.7 Dynamic Components
+* 19.8 `ComponentFactory`
+* 19.9 Dynamic Component Creation
+* 19.10 Advanced View Queries
+* 19.11 Custom Form Controls
+* 19.12 `ControlValueAccessor`
 
 ---
 
-# 20. Change Detection & Performance
+# 20. State Management
 
-## Change Detection Cycle
-
-## Default Strategy
-
-## OnPush Strategy
-
-## Async Pipe Optimization
-
-## TrackBy Function
-
-## Signal-Based Optimization
-
-## Rendering Optimization
-
-### Pure Pipes
-
-### Lazy Loading
-
-### Memoization Concepts
-
-## Performance Best Practices
+* 20.1 What Is Application State?
+* 20.2 Local Component State
+* 20.3 Shared State
+* 20.4 State Services
+* 20.5 Observable-based State
+* 20.6 State Architecture
+* 20.7 NgRx — When & Why
+* 20.8 Store
+* 20.9 Actions
+* 20.10 Reducers
+* 20.11 Selectors
+* 20.12 Effects
+* 20.13 Feature State
+* 20.14 Entity
 
 ---
 
-# 21. Angular SSR & Hydration
+# 21. Angular Architecture
 
-## Server Side Rendering
-
-## Angular SSR
-
-## SSR Architecture
-
-## SEO Benefits
-
-## Hydration
-
-## Client Hydration
-
-## SSR Deployment Basics
-
----
-
-# 22. Project Structure & Architecture
-
-## Enterprise Folder Structure
-
-```text
-src
- ├── core
- ├── shared
- ├── features
- ├── layouts
- ├── services
- ├── guards
- ├── interceptors
- ├── models
- ├── pipes
- ├── directives
- └── environments
-```
-
-## Feature Driven Architecture
-
-## Smart Components
-
-## Presentational Components
-
-## Shared Components
-
-## Reusable UI Design
-
-## Facade Pattern
-
-## Separation of Concerns
-
-## Environment Management
-
-## Naming Conventions
-
-## Clean Code Principles
+* 21.1 Feature-based Architecture
+* 21.2 Core vs Shared
+* 21.3 Feature Boundaries
+* 21.4 Smart vs Presentational Components
+* 21.5 Reusable Components
+* 21.6 Service Layer
+* 21.7 API Layer
+* 21.8 State Layer
+* 21.9 Dependency Direction
+* 21.10 Avoiding Circular Dependencies
+* 21.11 Folder Structure
+* 21.12 Scalable Angular Applications
 
 ---
 
-# 23. Testing
+# 22. Testing
 
-## Testing Fundamentals
-
-## Unit Testing
-
-## Integration Testing
-
-## Component Testing
-
-## Service Testing
-
-## Pipe Testing
-
-## Directive Testing
-
-## Form Testing
-
-## Observable Testing
-
-## Mocking Dependencies
-
-## HTTP Testing
-
-## Jasmine
-
-## Karma
-
-## Jest Introduction
+* 22.1 Testing Fundamentals
+* 22.2 Jasmine
+* 22.3 Karma
+* 22.4 TestBed
+* 22.5 Component Testing
+* 22.6 Service Testing
+* 22.7 Spies
+* 22.8 Mocking
+* 22.9 HTTP Testing
+* 22.10 Router Testing
+* 22.11 Async Testing
+* 22.12 Testing Forms
 
 ---
 
-# 24. Build, Optimization & Deployment
+# 23. Performance & Memory
 
-## Angular Build Process
-
-## Development Builds
-
-## Production Builds
-
-## Environment Files
-
-## Tree Shaking
-
-## Minification
-
-## Bundle Optimization
-
-## Deployment Strategies
-
-### IIS
-
-### Nginx
-
-### Azure
-
-### AWS
-
-### Firebase
-
-## CI/CD Basics
-
-### GitHub Actions
-
-### Azure DevOps
-
-### Jenkins
+* 23.1 Lazy Loading Optimization
+* 23.2 Change Detection Optimization
+* 23.3 `OnPush` Optimization
+* 23.4 Subscription Optimization
+* 23.5 Memory Leaks
+* 23.6 Unsubscribe Strategies
+* 23.7 Large Lists
+* 23.8 `trackBy`
+* 23.9 Virtual Scrolling
+* 23.10 Bundle Optimization
+* 23.11 Browser DevTools
+* 23.12 Angular Performance Debugging
 
 ---
 
-# 25. Advanced Angular Topics
+# 24. Production & Debugging
+
+* 24.1 Angular Environment Configuration
+* 24.2 Development vs Production
+* 24.3 Production Builds
+* 24.4 Build Configuration
+* 24.5 Runtime Debugging
+* 24.6 Network Debugging
+* 24.7 Console Debugging
+* 24.8 Source Maps
+* 24.9 Common Production Issues
+* 24.10 Deployment Basics
+* 24.11 CI/CD Basics
+* 24.12 Docker + Angular Basics
 
-## Dynamic Components
-
-## Dynamic Component Rendering
-
-## Custom Form Controls
-
-### ControlValueAccessor
-
-## Angular Elements
-
-## Web Components
-
-## Progressive Web Apps (PWA)
-
-## Web Workers
-
-## Internationalization (i18n)
-
-## Accessibility (a11y)
-
-## Module Federation
-
-## Micro Frontends
-
-## Nx Monorepo
-
----
-
-# 26. Real Production Concepts
-
-## Logging Strategies
-
-## Error Monitoring
-
-## Feature Flags
-
-## Configuration Management
-
-## API Versioning
-
-## Caching Strategies
-
-## Security Best Practices
-
-## Code Review Practices
-
-## Git Workflow
-
-### Branching Strategy
-
-### Pull Requests
-
-### Merge Conflicts
-
-## Agile Basics
-
-### Scrum
-
-### Jira Workflow
-
----
-
-# 27. Projects
-
-## Beginner Projects
-- Counter App
-- Calculator
-- Todo App
-
-## Intermediate Projects
-- Employee CRUD
-- Student Management System
-- Inventory Management System
-
-## Advanced Projects
-- Authentication System
-- Admin Dashboard
-- E-Commerce Application
-- ERP Module
-- HR Management System
-
-## Production-Level Project
-
-### Features
-- Authentication
-- Authorization
-- Dashboard
-- Reusable Components
-- Reactive Forms
-- State Management
-- API Integration
-- Lazy Loading
-- Error Handling
-- Unit Tests
-- Deployment
-
----
-
-# 28. Angular Interview Preparation
-
-## Core Angular Questions
-
-## TypeScript Questions
-
-## Lifecycle Questions
-
-## Routing Questions
-
-## Forms Questions
-
-## Dependency Injection Questions
-
-## RxJS Questions
-
-## HTTP Questions
-
-## State Management Questions
-
-## Change Detection Questions
-
-## Signals Questions
-
-## Angular Material Questions
-
-## Architecture Questions
-
-## Scenario Based Questions
-
-## System Design Discussions
-
----
-
-# Mastery Roadmap
-
-## Phase 1 (Must Know for Job)
-1. JavaScript
-2. TypeScript
-3. Components
-4. Data Binding
-5. Directives
-6. Pipes
-7. Lifecycle Hooks
-8. Component Communication
-9. Services & DI
-10. Routing
-11. Reactive Forms
-12. RxJS
-13. HTTP
-14. Authentication
-15. Angular Material
-
-## Phase 2 (Mid-Level Developer)
-16. Standalone APIs
-17. Signals
-18. State Management
-19. Performance
-20. Architecture
-
-## Phase 3 (Senior-Level Concepts)
-21. SSR
-22. Testing
-23. Deployment
-24. Advanced Angular
-25. Enterprise Architecture
-
----
-
-# Final Goal
-
-If you can confidently build a project using:
-
-- Standalone Components
-- Angular Material
-- Routing
-- Lazy Loading
-- Reactive Forms
-- Advanced RxJS
-- HTTP Interceptors
-- Authentication
-- Authorization
-- Signals
-- State Management
-- Testing
-- Deployment
-
-then you are genuinely **production-ready for most Angular developer roles (0–3 years experience)**.

@@ -91,7 +91,6 @@ URL change = Angular decides which component to show
 ## <center> HOW PROJECT STARTS
 
 ### Older style :-
-`ng new my-app`
 ```
 src/
 │

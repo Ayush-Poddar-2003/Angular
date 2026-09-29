@@ -64,22 +64,20 @@ Now AppComponent says:
 
 ```ts
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'home', component: HomeComponent }
+  ....
 ];
 ```
-Empty Path :-
-`{ path: '', component: HomeComponent }`  
-Empty path ' ' represents the root URL (/)
-
 
 ### REDIRECTS -
 
 ```ts
+{ path: '', component: HomeComponent }
+
+//Better approach
 { path: '', redirectTo: 'home', pathMatch: 'full' }
+// Do NOT render component → Just change URL 
 ```
-Do NOT render component → Just change URL 
 
 **pathMatch** ?  
 Angular can match routes in two ways:  
@@ -89,7 +87,8 @@ Angular interprets ' ' or / as a prefix of every URL,
 Result:
 👉 Infinite redirect loop as every url starts with `/`
 2. `full`   
-`{ path: '', redirectTo: 'home', pathMatch: 'full' }`: Only redirect when the entire URL is exact `\`
+`{ path: '', redirectTo: 'home', pathMatch: 'full' }`:  
+Only redirect when the entire URL is exact `\`
 
 > Always use `pathMatch: 'full'` for empty routes
 ---
@@ -122,13 +121,12 @@ const routes = [
 ```
 
 
-## <center> Nested Routing
-#### 1. Absolute
+# <center> Nested Routing
+#### 1. Absolute: Starts new route
 `<a routerLink="/home/profile"> Go </a>`  
-
 `this.router.navigate(['/home/profile']);`
 
-#### 2. Relative
+#### 2. Relative: Append in already
 Assume you already on `/home`  
 
 ```html

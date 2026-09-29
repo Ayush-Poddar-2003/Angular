@@ -15,13 +15,8 @@ Browser performs full page reload, Angular app restarts, State is lost
 // Absolute Path
 <a routerLink="/home">Home</a>
 
-// Removes existing path, starts from root
-```
-```ts
 // Relative Path
 <a routerLink="home">Home</a>
-
-// Based on your current route, It appends to current path.
 ```
 
 **ARRAY SYNTAX :-**  
